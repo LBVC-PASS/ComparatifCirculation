@@ -244,6 +244,16 @@
       "label": "Hippomobiles / chevaux / animaux"
     },
     {
+      "id": "veh_equipement",
+      "domaine": "veh",
+      "label": "Equipement, feux et phares du vehicule"
+    },
+    {
+      "id": "veh_passagers",
+      "domaine": "veh",
+      "label": "Passagers et occupants du vehicule"
+    },
+    {
       "id": "nui_lavage",
       "domaine": "nui",
       "label": "Lavage / reparation / vente sur rue"
