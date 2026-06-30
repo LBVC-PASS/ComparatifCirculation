@@ -2517,6 +2517,22 @@ const STATUTS = {
   hybride:       {label:"Hybride",       reco:"réécrire/scinder"},
   a_valider:     {label:"À valider",     reco:"valider"},
 };
+// Libellés accentués pour les recommandations stockées sans accent dans le JSON.
+// Les valeurs déjà accentuées (défauts par statut) passent telles quelles.
+const RECOS = {
+  conserver:  "conserver",
+  retirer:    "retirer",
+  harmoniser: "harmoniser",
+  reecrire:   "réécrire",
+  moderniser: "moderniser",
+  valider:    "valider",
+};
+// Recommandation affichée : le champ propre à l'article fait foi ;
+// à défaut, on retombe sur la recommandation par défaut du statut.
+function recoText(f){
+  const raw = f.recommandation || (STATUTS[f.statut] ? STATUTS[f.statut].reco : "");
+  return RECOS[raw] || raw;
+}
 const FLAGS = {
   harmonise:     "Harmonisé",
   divergent:     "Divergent",
@@ -2630,7 +2646,7 @@ function ficheHTML(f){
   return `<div class="fiche">
     <div class="fhead"><span class="art">art. ${esc(f.numero)}</span><span class="obj">${esc(f.objet)}</span></div>
     <div class="txt">${esc(f.texte)}</div>
-    <div class="meta">${badge(f.statut)}<span class="pill">→ ${esc(STATUTS[f.statut]?STATUTS[f.statut].reco:f.recommandation)}</span>${f.renvoi_csr?`<span class="pill">CSR ${esc(f.renvoi_csr)}</span>`:""}${amende(f.amende)}</div>
+    <div class="meta">${badge(f.statut)}<span class="pill">→ ${esc(recoText(f))}</span>${f.renvoi_csr?`<span class="pill">CSR ${esc(f.renvoi_csr)}</span>`:""}${amende(f.amende)}</div>
     ${f.note?`<div class="note">${esc(f.note)}</div>`:""}
   </div>`;
 }
@@ -2680,7 +2696,7 @@ function renderTable(){
       <td><div class="objt">${esc(f.objet)}</div><div class="txtt">${esc(f.texte)}</div>${f.note?`<div class="txtt" style="color:#8a5a14">⚑ ${esc(f.note)}</div>`:""}</td>
       <td class="hide-sm">${esc(themeLabel(f.theme))}</td>
       <td>${badge(f.statut)}</td>
-      <td>${esc(STATUTS[f.statut]?STATUTS[f.statut].reco:f.recommandation)}</td>
+      <td>${esc(recoText(f))}</td>
       <td class="hide-sm">${f.renvoi_csr?esc(f.renvoi_csr):"—"}</td>
     </tr>`).join("");
 }
