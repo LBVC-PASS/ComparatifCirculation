@@ -1,5 +1,5 @@
 {
-  "version": "v1-2026-06",
+  "version": "v2-2026-06",
   "articles": [
     {
       "id": "DM-1",
@@ -1171,9 +1171,9 @@
       "note": null
     },
     {
-      "id": "SM-292",
+      "id": "SM-291",
       "source": "SM",
-      "numero": "292",
+      "numero": "291",
       "theme": "cir_acces_limite",
       "objet": "Restriction de masse/dimension",
       "texte": "Interdire selon masse ou dimension.",
@@ -1185,9 +1185,9 @@
       "note": null
     },
     {
-      "id": "SM-294",
+      "id": "SM-293",
       "source": "SM",
-      "numero": "294",
+      "numero": "293",
       "theme": "cir_acces_limite",
       "objet": "Restriction lors d'evenements",
       "texte": "Restreindre la circulation temporairement.",
@@ -1199,9 +1199,9 @@
       "note": null
     },
     {
-      "id": "SM-296",
+      "id": "SM-295",
       "source": "SM",
-      "numero": "296",
+      "numero": "295",
       "theme": "sig_pouvoir",
       "objet": "Pouvoirs de signalisation",
       "texte": "Zones d'arret, demi-tours, passages, voies cyclables...",
@@ -1213,9 +1213,9 @@
       "note": null
     },
     {
-      "id": "SM-302",
+      "id": "SM-301",
       "source": "SM",
-      "numero": "302",
+      "numero": "301",
       "theme": "sig_protection",
       "objet": "Signalisation par la Ville seulement",
       "texte": "Seule la Ville peut installer la signalisation.",
@@ -1230,9 +1230,9 @@
       "note": null
     },
     {
-      "id": "SM-305",
+      "id": "SM-304",
       "source": "SM",
-      "numero": "305",
+      "numero": "304",
       "theme": "sig_protection",
       "objet": "Signalisation non autorisee",
       "texte": "Interdiction d'installer sans autorisation.",
@@ -1247,9 +1247,9 @@
       "note": null
     },
     {
-      "id": "SM-311",
+      "id": "SM-310",
       "source": "SM",
-      "numero": "311",
+      "numero": "310",
       "theme": "sig_respect",
       "objet": "Respect de la signalisation",
       "texte": "Obligation de se conformer.",
@@ -1264,9 +1264,9 @@
       "note": null
     },
     {
-      "id": "SM-312",
+      "id": "SM-311",
       "source": "SM",
-      "numero": "312",
+      "numero": "311",
       "theme": "sig_respect",
       "objet": "Obeir au signaleur / brigadier",
       "texte": "Obeir malgre signalisation contraire.",
@@ -1281,9 +1281,9 @@
       "note": null
     },
     {
-      "id": "SM-314",
+      "id": "SM-313",
       "source": "SM",
-      "numero": "314",
+      "numero": "313",
       "theme": "cir_sens_unique",
       "objet": "Sens uniques (annexe L)",
       "texte": "Designe les chemins a sens unique.",
@@ -1295,9 +1295,9 @@
       "note": null
     },
     {
-      "id": "SM-315",
+      "id": "SM-314",
       "source": "SM",
-      "numero": "315",
+      "numero": "314",
       "theme": "sig_protection",
       "objet": "Degradation de la signalisation",
       "texte": "Interdiction d'endommager/deplacer.",
@@ -1309,9 +1309,9 @@
       "note": null
     },
     {
-      "id": "SM-321",
+      "id": "SM-320",
       "source": "SM",
-      "numero": "321",
+      "numero": "320",
       "theme": "cir_voies",
       "objet": "Utilisation des voies (2 sens)",
       "texte": "Utiliser la voie de droite.",
@@ -1326,9 +1326,9 @@
       "note": null
     },
     {
-      "id": "SM-322",
+      "id": "SM-321",
       "source": "SM",
-      "numero": "322",
+      "numero": "321",
       "theme": "cir_voies",
       "objet": "Voie d'extreme droite",
       "texte": "Sur chaussee a plusieurs voies.",
@@ -1343,9 +1343,9 @@
       "note": null
     },
     {
-      "id": "SM-325",
+      "id": "SM-324",
       "source": "SM",
-      "numero": "325",
+      "numero": "324",
       "theme": "cir_voies",
       "objet": "Voies a sens unique",
       "texte": "Voie d'extreme droite.",
@@ -1360,9 +1360,9 @@
       "note": null
     },
     {
-      "id": "SM-328",
+      "id": "SM-327",
       "source": "SM",
-      "numero": "328",
+      "numero": "327",
       "theme": "vit_defaut",
       "objet": "Conduite imprudente / vitesse",
       "texte": "Vitesse mettant en peril prohibee.",
@@ -1377,9 +1377,9 @@
       "note": null
     },
     {
-      "id": "SM-329",
+      "id": "SM-328",
       "source": "SM",
-      "numero": "329",
+      "numero": "328",
       "theme": "vit_defaut",
       "objet": "Limites de vitesse",
       "texte": "50 par defaut; 30 scolaire; 60 (annexe G); 15 domaine.",
@@ -1393,9 +1393,9 @@
       "note": "DIVERGENT vs DM (30 par defaut). SMSL: 50 (annexe F) + zones."
     },
     {
-      "id": "SM-330",
+      "id": "SM-329",
       "source": "SM",
-      "numero": "330",
+      "numero": "329",
       "theme": "vit_zone",
       "objet": "Zone scolaire / hospitaliere",
       "texte": "Designe zones scolaire (H) et hospitaliere (I).",
@@ -1409,9 +1409,9 @@
       "note": null
     },
     {
-      "id": "SM-331",
+      "id": "SM-330",
       "source": "SM",
-      "numero": "331",
+      "numero": "330",
       "theme": "vit_conditions",
       "objet": "Reduire la vitesse (visibilite)",
       "texte": "Reduire selon obscurite/pluie/chaussee.",
@@ -1426,9 +1426,9 @@
       "note": null
     },
     {
-      "id": "SM-332",
+      "id": "SM-331",
       "source": "SM",
-      "numero": "332",
+      "numero": "331",
       "theme": "vit_conditions",
       "objet": "Lenteur excessive",
       "texte": "Interdiction de gener la circulation.",
@@ -1443,9 +1443,9 @@
       "note": null
     },
     {
-      "id": "SM-333",
+      "id": "SM-332",
       "source": "SM",
-      "numero": "333",
+      "numero": "332",
       "theme": "vit_radar",
       "objet": "Mesure de la vitesse (appareil)",
       "texte": "Appareil approuve par la Regie fait preuve.",
@@ -1457,9 +1457,9 @@
       "note": "Adapter au cadre RPLDM."
     },
     {
-      "id": "SM-334",
+      "id": "SM-333",
       "source": "SM",
-      "numero": "334",
+      "numero": "333",
       "theme": "vit_radar",
       "objet": "Detecteur de radar",
       "texte": "Interdiction; renvoie au CSR art. 253.",
@@ -1474,9 +1474,9 @@
       "note": null
     },
     {
-      "id": "SM-336",
+      "id": "SM-335",
       "source": "SM",
-      "numero": "336",
+      "numero": "335",
       "theme": "cir_distance",
       "objet": "Distance entre vehicules",
       "texte": "Distance prudente et raisonnable.",
@@ -1491,9 +1491,9 @@
       "note": null
     },
     {
-      "id": "SM-381",
+      "id": "SM-380",
       "source": "SM",
-      "numero": "381",
+      "numero": "380",
       "theme": "nui_divers",
       "objet": "Enfant <7 ans sans surveillance",
       "texte": "Interdiction de laisser l'enfant seul.",
@@ -1508,9 +1508,9 @@
       "note": null
     },
     {
-      "id": "SM-382",
+      "id": "SM-381",
       "source": "SM",
-      "numero": "382",
+      "numero": "381",
       "theme": "sta_position",
       "objet": "Cle / portieres",
       "texte": "Enlever la cle et verrouiller.",
@@ -1525,9 +1525,9 @@
       "note": null
     },
     {
-      "id": "SM-383",
+      "id": "SM-382",
       "source": "SM",
-      "numero": "383",
+      "numero": "382",
       "theme": "sta_interdit",
       "objet": "Immobilisation genante",
       "texte": "Ne pas gener circulation/signalisation.",
@@ -1542,9 +1542,9 @@
       "note": null
     },
     {
-      "id": "SM-383.2",
+      "id": "SM-382.2",
       "source": "SM",
-      "numero": "383.2",
+      "numero": "382.2",
       "theme": "sta_nuit_hiver",
       "objet": "Stationnement de nuit (hiver)",
       "texte": "Interdit minuit-7h, 15 nov au 15 avr.",
@@ -1562,9 +1562,9 @@
       "note": "DIVERGENT vs DM: periode plus courte (debute 15 nov, non 1er nov)."
     },
     {
-      "id": "SM-383.3",
+      "id": "SM-382.3",
       "source": "SM",
-      "numero": "383.3",
+      "numero": "382.3",
       "theme": "sta_transport",
       "objet": "Taxis en attente",
       "texte": "Interdit sauf endroits prevus (annexe D).",
@@ -1579,9 +1579,9 @@
       "note": null
     },
     {
-      "id": "SM-383.6",
+      "id": "SM-382.6",
       "source": "SM",
-      "numero": "383.6",
+      "numero": "382.6",
       "theme": "sta_interdit",
       "objet": "Stationnement dans les ruelles",
       "texte": "Interdit sauf chargement.",
@@ -1596,9 +1596,9 @@
       "note": null
     },
     {
-      "id": "SM-384",
+      "id": "SM-383",
       "source": "SM",
-      "numero": "384",
+      "numero": "383",
       "theme": "sta_position",
       "objet": "Positionnement (30 cm, sens)",
       "texte": "A >30 cm de la bordure, dans le sens.",
@@ -1613,9 +1613,9 @@
       "note": null
     },
     {
-      "id": "SM-387",
+      "id": "SM-386",
       "source": "SM",
-      "numero": "387",
+      "numero": "386",
       "theme": "sta_interdit",
       "objet": "Endroits d'immobilisation interdits",
       "texte": "Liste (trottoir, borne, intersection...).",
@@ -1627,9 +1627,9 @@
       "note": null
     },
     {
-      "id": "SM-389",
+      "id": "SM-388",
       "source": "SM",
-      "numero": "389",
+      "numero": "388",
       "theme": "sta_handicape",
       "objet": "Reserve personnes handicapees",
       "texte": "Vignette requise.",
@@ -1644,9 +1644,9 @@
       "note": "Renvoi 'art. 11 (L.127)' perime."
     },
     {
-      "id": "SM-390",
+      "id": "SM-389",
       "source": "SM",
-      "numero": "390",
+      "numero": "389",
       "theme": "veh_charge",
       "objet": "Heures de conduite autobus",
       "texte": "Limite de temps de conduite.",
@@ -1661,9 +1661,9 @@
       "note": null
     },
     {
-      "id": "SM-392",
+      "id": "SM-391",
       "source": "SM",
-      "numero": "392",
+      "numero": "391",
       "theme": "sta_remorquage",
       "objet": "Abandon de vehicule",
       "texte": "Interdiction d'abandonner sur chemin public.",
@@ -1678,9 +1678,9 @@
       "note": null
     },
     {
-      "id": "SM-396.1",
+      "id": "SM-394.1",
       "source": "SM",
-      "numero": "396.1",
+      "numero": "394.1",
       "theme": "sta_remorquage",
       "objet": "Deneigement / travaux",
       "texte": "Interdiction lors de travaux/neige.",
@@ -1692,9 +1692,9 @@
       "note": null
     },
     {
-      "id": "SM-396.4",
+      "id": "SM-394.6",
       "source": "SM",
-      "numero": "396.4",
+      "numero": "394.6",
       "theme": "nui_lavage",
       "objet": "Reparation sur la voie publique",
       "texte": "Interdiction de stationner pour reparer.",
@@ -1726,9 +1726,9 @@
       "note": null
     },
     {
-      "id": "SM-396.7",
+      "id": "SM-394.7",
       "source": "SM",
-      "numero": "396.7",
+      "numero": "394.7",
       "theme": "nui_lavage",
       "objet": "Laver sur le chemin public",
       "texte": "Interdiction.",
@@ -1743,9 +1743,9 @@
       "note": null
     },
     {
-      "id": "SM-396.8",
+      "id": "SM-394.8",
       "source": "SM",
-      "numero": "396.8",
+      "numero": "394.8",
       "theme": "nui_lavage",
       "objet": "Vente / affichage depuis vehicule",
       "texte": "Interdiction.",
@@ -1760,9 +1760,9 @@
       "note": null
     },
     {
-      "id": "SM-396.9",
+      "id": "SM-394.9",
       "source": "SM",
-      "numero": "396.9",
+      "numero": "394.9",
       "theme": "veh_charge",
       "objet": "Chargement / dechargement",
       "texte": "Parallele a la chaussee, sans interruption.",
@@ -1777,9 +1777,9 @@
       "note": null
     },
     {
-      "id": "SM-396.11",
+      "id": "SM-394.11",
       "source": "SM",
-      "numero": "396.11",
+      "numero": "394.11",
       "theme": "sta_debarcadere",
       "objet": "Zones de chargement/voyageurs",
       "texte": "Duree limitee (max 30 min dechargement).",
@@ -1794,9 +1794,9 @@
       "note": null
     },
     {
-      "id": "SM-396.13",
+      "id": "SM-394.13",
       "source": "SM",
-      "numero": "396.13",
+      "numero": "394.13",
       "theme": "sta_lourds",
       "objet": "Vehicules non-promenade en residentiel",
       "texte": "Interdiction sur chemin public.",
@@ -1811,9 +1811,9 @@
       "note": null
     },
     {
-      "id": "SM-396.14",
+      "id": "SM-394.14",
       "source": "SM",
-      "numero": "396.14",
+      "numero": "394.14",
       "theme": "sta_interdit",
       "objet": "Zone d'urgence (annexe J)",
       "texte": "Interdiction de stationner (exceptions).",
@@ -1844,9 +1844,9 @@
       "note": "Comparer aux conditions de la vignette DM (art. 48)."
     },
     {
-      "id": "SM-396",
+      "id": "SM-395",
       "source": "SM",
-      "numero": "396",
+      "numero": "395",
       "theme": "nui_ceinture",
       "objet": "Ceinture - vehicule non conforme",
       "texte": "Ceinture manquante/modifiee interdite.",
@@ -1861,9 +1861,9 @@
       "note": "REDONDANT: section entiere reprise du CSR. Absente chez DM."
     },
     {
-      "id": "SM-397",
+      "id": "SM-396",
       "source": "SM",
-      "numero": "397",
+      "numero": "396",
       "theme": "nui_ceinture",
       "objet": "Port de la ceinture (5 ans +)",
       "texte": "Obligation de porter la ceinture.",
@@ -1878,9 +1878,9 @@
       "note": null
     },
     {
-      "id": "SM-398",
+      "id": "SM-397",
       "source": "SM",
-      "numero": "398",
+      "numero": "397",
       "theme": "nui_ceinture",
       "objet": "Dispositif de retenue (-5 ans)",
       "texte": "Siege d'enfant obligatoire.",
@@ -1892,9 +1892,9 @@
       "note": null
     },
     {
-      "id": "SM-402",
+      "id": "SM-401",
       "source": "SM",
-      "numero": "402",
+      "numero": "401",
       "theme": "nui_ceinture",
       "objet": "Passager <16 ans",
       "texte": "Responsabilite du conducteur.",
@@ -1909,9 +1909,9 @@
       "note": null
     },
     {
-      "id": "SM-403",
+      "id": "SM-402",
       "source": "SM",
-      "numero": "403",
+      "numero": "402",
       "theme": "cir_priorite",
       "objet": "Priorite a droite",
       "texte": "Ceder a droite a l'intersection.",
@@ -1926,9 +1926,9 @@
       "note": null
     },
     {
-      "id": "SM-404",
+      "id": "SM-403",
       "source": "SM",
-      "numero": "404",
+      "numero": "403",
       "theme": "cir_priorite",
       "objet": "Chemin a acces limite",
       "texte": "Ceder en s'engageant.",
@@ -2037,6 +2037,40 @@
       "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-507",
+      "source": "SM",
+      "numero": "507",
+      "theme": "nui_peinture",
+      "objet": "Peinture fraiche",
+      "texte": "Defendu a tout vehicule ou pieton de circuler sur les lignes fraichement peinturees sur la chaussee lorsqu'elles sont indiquees par des dispositifs appropries.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": 300
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-512",
+      "source": "SM",
+      "numero": "512",
+      "theme": "nui_marques",
+      "objet": "Marques sur pneus",
+      "texte": "Interdit d'effacer toute marque faite a la craie ou au crayon par un agent ou une personne autorisee sur un pneu, dans le but de controler la duree de stationnement.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": 300
+      },
       "parametres": {},
       "note": null
     },
