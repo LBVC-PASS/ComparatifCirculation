@@ -1,5 +1,5 @@
 {
-  "version": "v3-2026-06",
+  "version": "v4-2026-06",
   "articles": [
     {
       "id": "DM-1",
@@ -1132,8 +1132,8 @@
       "theme": "adm_autorite",
       "objet": "Enquete sur les accidents",
       "texte": "Pouvoir d'enquete de la police.",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
@@ -1191,9 +1191,9 @@
       "theme": "cir_acces_limite",
       "objet": "Pour l'application du present titre, un",
       "texte": "Pour l'application du present titre, un chemin a acces limite est un chemin public sur lequel on ne peut s'engager ou qu'on ne peut quitter qu'aux endroits specialement...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "288",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1227,7 +1227,7 @@
         "max": 200
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 292 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-293",
@@ -1250,9 +1250,9 @@
       "theme": "sig_pouvoir",
       "objet": "La Ville doit installer, a toute",
       "texte": "La Ville doit installer, a toute intersection, une signalisation appropriee.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "294",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1283,7 +1283,7 @@
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 296 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-301",
@@ -1309,9 +1309,9 @@
       "theme": "sig_protection",
       "objet": "La Ville peut enlever toute signalisation",
       "texte": "La Ville peut enlever toute signalisation installee en contravention a l'article 301.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "302",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1340,9 +1340,9 @@
       "theme": "sig_protection",
       "objet": "La Ville peut enlever, aux frais du",
       "texte": "La Ville peut enlever, aux frais du contrevenant, les objets installes en contravention a l'article 304",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "305",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1362,7 +1362,7 @@
         "max": 600
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 306 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-307",
@@ -1371,9 +1371,9 @@
       "theme": "sig_protection",
       "objet": "La Ville peut, si elle a des motifs",
       "texte": "La Ville peut, si elle a des motifs raisonnables de croire qu'un signal, une affiche, une indication ou un dispositif est installe ou exhibe sur une propriete privee en...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "307",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1385,9 +1385,9 @@
       "theme": "sig_protection",
       "objet": "Chemin prive",
       "texte": "La signalisation installee sur un chemin prive ouvert a la circulation publique des vehicules routiers doit etre conforme aux normes etablies par le Ministre des...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "308",
       "amende": {
         "min": 100,
         "max": 200
@@ -1402,9 +1402,9 @@
       "theme": "sig_protection",
       "objet": "Le Ministre des Transports ou un representant",
       "texte": "Le Ministre des Transports ou un representant autorise de la Ville sur le territoire de laquelle se situe un chemin vise a l'article 308 peut, s'il a des motifs...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "309",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1455,7 +1455,7 @@
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 312 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-313",
@@ -1492,9 +1492,9 @@
       "theme": "cir_acces_limite",
       "objet": "Pour l'application du present reglement, a",
       "texte": "Pour l'application du present reglement, a moins que le contexte n'indique un sens different, on entend par les mots \"Chemin a acces limite\" un chemin public sur lequel...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "319",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1540,9 +1540,9 @@
       "theme": "cir_voies",
       "objet": "Dans les 2 sens chaussee et divisee en trois voies",
       "texte": "Sur une chaussee a circulation dans les deux sens et divisee en trois voies de circulation dont celle du centre est utilisee dans l'un ou l'autre sens, le conducteur...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "322",
       "amende": {
         "min": 100,
         "max": 200
@@ -1557,9 +1557,9 @@
       "theme": "cir_voies",
       "objet": "Virage a gauche: voie centrale",
       "texte": "Sur une chaussee a circulation dans les deux sens et divisee en cinq voies de circulation dont celle du centre est utilisee dans l'un ou l'autre sens, le conducteur d'un...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "323",
       "amende": {
         "min": 60,
         "max": 100
@@ -1591,9 +1591,9 @@
       "theme": "cir_voies",
       "objet": "Circulation: vitesse inferieure a celle de l'allure de la circulation",
       "texte": "Malgre l'article 324, a l'interieur d'une cite ou d'une ville ou lorsque la vitesse est inferieure a 80 KM/H, le conducteur d'un vehicule routier peut utiliser l'une ou...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "325",
       "amende": {
         "min": 30,
         "max": 60
@@ -1616,7 +1616,7 @@
         "max": 200
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 326 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-327",
@@ -1739,9 +1739,9 @@
       "theme": "cir_distance",
       "objet": "Un agent de la paix qui a des motifs",
       "texte": "Un agent de la paix qui a des motifs raisonnables de croire qu'un detecteur de radar de vitesse se trouve dans un vehicule routier peut faire immobiliser ce vehicule et...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "334",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1778,7 +1778,7 @@
         "max": 60
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 336 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-337",
@@ -1787,9 +1787,9 @@
       "theme": "cir_acces_limite",
       "objet": "Vehicule routier 5 500 kg",
       "texte": "NIL 3. DEPASSEMENT {3.-depassement}",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "337",
       "amende": {
         "min": 30,
         "max": 60
@@ -1804,9 +1804,9 @@
       "theme": "cir_depassement",
       "objet": "Le conducteur d'un vehicule routier peut",
       "texte": "Le conducteur d'un vehicule routier peut franchir une ligne discontinue de demarcation de voie pour effectuer un depassement ou pour changer de voie.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "338",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1818,9 +1818,9 @@
       "theme": "cir_depassement",
       "objet": "D'un vehicule routier",
       "texte": "Sur une chaussee dans les deux sens, le conducteur d'un vehicule routier qui en depasse un autre doit, apres avoir signale son intention et s'etre assure qu'il peut le...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "339",
       "amende": {
         "min": 30,
         "max": 60
@@ -1835,9 +1835,9 @@
       "theme": "cir_depassement",
       "objet": "D'un vehicule depasse",
       "texte": "Le conducteur d'un vehicule routier depasse ou sur le point de l'etre ne peut augmenter la vitesse de son vehicule pendant le depassement.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "340",
       "amende": {
         "min": 200,
         "max": 300
@@ -1860,7 +1860,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 341 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-341.1",
@@ -1877,7 +1877,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-342",
@@ -1886,9 +1886,9 @@
       "theme": "cir_depassement",
       "objet": "En zigzag",
       "texte": "Le conducteur d'un vehicule routier ne peut effectuer en zigzag plusieurs depassements successifs sur une chaussee a deux voies ou plus de circulation a sens unique.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "342",
       "amende": {
         "min": 200,
         "max": 300
@@ -1903,9 +1903,9 @@
       "theme": "cir_depassement",
       "objet": "Ligne continue simple ou double, ligne double formee d'une ligne discontinue et d'une ligne continue",
       "texte": "Le conducteur d'un vehicule routier ne peut franchir aucune des lignes de demarcation de voies suivantes pour effectuer un depassement : 1) une ligne continue simple; 2)...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "338",
       "amende": {
         "min": 100,
         "max": 200
@@ -1920,9 +1920,9 @@
       "theme": "cir_depassement",
       "objet": "Le conducteur d'un vehicule routier peut",
       "texte": "Le conducteur d'un vehicule routier peut franchir une ligne visee a l'article 343, dans la mesure ou cette manoeuvre peut etre effectuee sans danger, si la voie est...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "344",
       "amende": null,
       "parametres": {},
       "note": null
@@ -1934,9 +1934,9 @@
       "theme": "cir_depassement",
       "objet": "Interdictions",
       "texte": "Nul ne peut effectuer un depassement en empruntant la voie reservee a la circulation en sens inverse : 1) a l'approche du sommet et au sommet d'une elevation ou dans une...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "345",
       "amende": {
         "min": 200,
         "max": 300
@@ -1951,9 +1951,9 @@
       "theme": "cir_depassement",
       "objet": "Par la droite",
       "texte": "Nul ne peut effectuer un depassement par la droite, sauf pour depasser un vehicule qui effectue ou est sur le point d'effectuer un virage a gauche ou un vehicule qui se...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "346",
       "amende": {
         "min": 200,
         "max": 300
@@ -1968,9 +1968,9 @@
       "theme": "cir_depassement",
       "objet": "Depassement par la droite sans quitter la chaussee",
       "texte": "En aucun cas, le conducteur qui effectue un depassement ne peut quitter la chaussee.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "347",
       "amende": {
         "min": 200,
         "max": 300
@@ -1985,9 +1985,9 @@
       "theme": "cir_depassement",
       "objet": "Interdictions",
       "texte": "Nul ne peut effectuer un depassement dans les cas suivants : 1) le conducteur d'un vehicule venant de l'arriere a deja signale son intention d'effectuer un depassement...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "348",
       "amende": {
         "min": 200,
         "max": 300
@@ -2002,9 +2002,9 @@
       "theme": "cir_virage",
       "objet": "A une intersection",
       "texte": "Le conducteur d'un vehicule routier ou d'une bicyclette qui effectue un virage a une intersection doit ceder le passage aux pietons et aux cyclistes qui traversent la...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "349",
       "amende": {
         "min": 100,
         "max": 200
@@ -2019,9 +2019,9 @@
       "theme": "cir_virage",
       "objet": "A gauche: ceder le passage",
       "texte": "Le conducteur d'un vehicule routier ou d'une bicyclette qui s'apprete a effectuer un virage a gauche doit ceder le passage a tout vehicule qui circule en sens inverse et...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "350",
       "amende": {
         "min": 100,
         "max": 200
@@ -2036,9 +2036,9 @@
       "theme": "cir_virage",
       "objet": "A droite: signaler son intention",
       "texte": "Le conducteur d'un vehicule routier qui veut effectuer un virage a droite a une intersection doit, apres avoir signale son intention et s'etre assure qu'il peut le faire...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "351",
       "amende": {
         "min": 30,
         "max": 60
@@ -2053,9 +2053,9 @@
       "theme": "cir_virage",
       "objet": "A gauche: chaussee 2 sens a chaussee 2 sens",
       "texte": "Sur une chaussee a circulation dans les deux sens, le conducteur d'un vehicule routier qui veut effectuer un virage a gauche a l'intersection d'une chaussee ou la...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "352",
       "amende": {
         "min": 30,
         "max": 60
@@ -2070,9 +2070,9 @@
       "theme": "cir_virage",
       "objet": "A gauche: chaussee 2 sens a chaussee 2 voies ou plus",
       "texte": "Sur une chaussee a deux voies ou plus de circulation dans les deux sens, le conducteur d'un vehicule routier qui veut effectuer un virage a gauche a l'intersection d'une...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "353",
       "amende": {
         "min": 30,
         "max": 60
@@ -2087,9 +2087,9 @@
       "theme": "cir_virage",
       "objet": "A gauche: chaussee 2 sens a chaussee a sens unique",
       "texte": "Sur une chaussee a circulation dans les deux sens, le conducteur d'un vehicule routier qui veut effectuer un virage a gauche a l'intersection d'une chaussee a sens...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "354",
       "amende": {
         "min": 30,
         "max": 60
@@ -2104,9 +2104,9 @@
       "theme": "cir_virage",
       "objet": "A gauche: de sens unique a sens unique",
       "texte": "Sur une chaussee a circulation a sens unique, le conducteur d'un vehicule routier qui veut effectuer un virage a gauche a l'intersection d'une autre chaussee a sens...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "355",
       "amende": {
         "min": 30,
         "max": 60
@@ -2121,9 +2121,9 @@
       "theme": "cir_virage",
       "objet": "A gauche: chaussee de deux voies ou plus a chaussee a sens unique",
       "texte": "Sur une chaussee a deux voies ou plus de circulation a sens unique, le conducteur d'un vehicule routier qui veut effectuer un virage a gauche a une intersection doit,...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "356",
       "amende": {
         "min": 30,
         "max": 60
@@ -2138,9 +2138,9 @@
       "theme": "cir_virage",
       "objet": "A gauche: de sens unique a chaussee a circulation dans les 2 sens",
       "texte": "Sur une chaussee a circulation a sens unique, le conducteur d'un vehicule routier qui veut effectuer un virage a gauche a l'intersection d'une chaussee ou la circulation...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "357",
       "amende": {
         "min": 30,
         "max": 60
@@ -2155,9 +2155,9 @@
       "theme": "cir_virage",
       "objet": "A gauche: de sens unique a chaussee a 2 voies ou plus de circulation dans les 2 sens",
       "texte": "Sur une chaussee a circulation a sens unique, le conducteur d'un vehicule routier qui veut effectuer un virage a gauche a l'intersection d'une chaussee a deux voies ou...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "358",
       "amende": {
         "min": 30,
         "max": 60
@@ -2180,7 +2180,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-358.2",
@@ -2197,7 +2197,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-358.3",
@@ -2214,7 +2214,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-358.4",
@@ -2231,7 +2231,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-358.5",
@@ -2248,7 +2248,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-359",
@@ -2257,9 +2257,9 @@
       "theme": "sig_feux",
       "objet": "Feu rouge",
       "texte": "A moins d'une signalisation contraire, face a un feu rouge, le conducteur d'un vehicule routier ou d'une bicyclette doit immobiliser son vehicule avant le passage pour...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "361",
       "amende": {
         "min": 100,
         "max": 200
@@ -2274,9 +2274,9 @@
       "theme": "sig_feux",
       "objet": "Feu rouge clignotant",
       "texte": "A moins d'une signalisation contraire, face a un feu rouge clignotant, le conducteur d'un vehicule routier ou d'une bicyclette doit immobiliser son vehicule qui,...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "360",
       "amende": {
         "min": 100,
         "max": 200
@@ -2291,9 +2291,9 @@
       "theme": "sig_feux",
       "objet": "Feu jaune",
       "texte": "A moins d'une signalisation contraire, face a un feu jaune, le conducteur d'un vehicule routier ou d'une bicyclette doit immobiliser son vehicule avant le passage pour...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "361",
       "amende": {
         "min": 60,
         "max": 100
@@ -2308,9 +2308,9 @@
       "theme": "sig_feux",
       "objet": "Feu jaune clignotant",
       "texte": "A moins d'une signalisation contraire, face a un feu jaune clignotant, le conducteur d'un vehicule routier ou d'une bicyclette doit diminuer la vitesse de son vehicule...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "362",
       "amende": {
         "min": 100,
         "max": 200
@@ -2325,9 +2325,9 @@
       "theme": "sig_feux",
       "objet": "Feu vert clignotant ou non",
       "texte": "A moins d'une signalisation contraire, face a un feu vert, clignotant ou non, le conducteur d'un vehicule routier ou d'une bicyclette doit, apres avoir cede le passage...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "363",
       "amende": {
         "min": 100,
         "max": 200
@@ -2342,9 +2342,9 @@
       "theme": "sig_feux",
       "objet": "Fleche verte",
       "texte": "A moins d'une signalisation contraire, face a une fleche verte, clignotante ou non, le conducteur d'un vehicule routier ou d'une bicyclette doit, apres avoir cede le...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "364",
       "amende": {
         "min": 100,
         "max": 200
@@ -2359,9 +2359,9 @@
       "theme": "sig_feux",
       "objet": "Voie de circulation avec fleche verte",
       "texte": "Lorsque des signaux lumineux de circulation sont installes au-dessus de voies de circulation le conducteur d'un vehicule routier ne peut circuler que sur les voies...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "365",
       "amende": {
         "min": 100,
         "max": 200
@@ -2376,9 +2376,9 @@
       "theme": "sig_feux",
       "objet": "Blocage d'intersection",
       "texte": "Meme si un feu de circulation le permet, le conducteur d'un vehicule routier ne peut s'engager dans une intersection quand le vehicule ne dispose pas a l'avant d'un...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "366",
       "amende": {
         "min": 30,
         "max": 60
@@ -2393,9 +2393,9 @@
       "theme": "sig_feux",
       "objet": "Feu de circulation defectueux",
       "texte": "Lorsqu'un feu de circulation installe a une intersection est defectueux ou inoperant, le conducteur d'un vehicule routier ou d'une bicyclette doit se comporter comme si...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "367",
       "amende": {
         "min": 100,
         "max": 200
@@ -2410,8 +2410,8 @@
       "theme": "sig_arret",
       "objet": "Arret",
       "texte": "Le conducteur d'un vehicule routier ou d'une bicyclette qui fait face a un panneau d'arret doit immobiliser son vehicule et se conformer a l'article 360. 1. Les panneaux...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": {
         "min": 100,
@@ -2427,9 +2427,9 @@
       "theme": "sig_arret",
       "objet": "Arret sur une seule chaussee",
       "texte": "A une intersection reglementee par des panneaux d'arret installes pour une seule chaussee, le conducteur d'un vehicule routier ou d'une bicyclette qui fait face a un...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "369",
       "amende": {
         "min": 100,
         "max": 200
@@ -2444,9 +2444,9 @@
       "theme": "sig_arret",
       "objet": "Arret pour toutes les directions",
       "texte": "A une intersection reglementee par des panneaux d'arret pour toutes les directions, le conducteur d'un vehicule routier ou d'une bicyclette doit immobiliser son vehicule...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "370",
       "amende": {
         "min": 100,
         "max": 200
@@ -2461,9 +2461,9 @@
       "theme": "cir_priorite",
       "objet": "Signal: priorite de passage",
       "texte": "Le conducteur d'un vehicule routier ou d'une bicyclette qui fait face a un signal lui ordonnant de ceder le passage a tout vehicule qui circule sur la voie sur laquelle...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "371",
       "amende": {
         "min": 100,
         "max": 200
@@ -2478,9 +2478,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Changement de direction",
       "texte": "Le conducteur d'un vehicule routier qui s'apprete a effectuer un virage, a changer de voie de circulation, a faire demi-tour ou a reintegrer la chaussee en provenance de...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "372",
       "amende": {
         "min": 30,
         "max": 60
@@ -2495,9 +2495,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Signaux manuels",
       "texte": "Le conducteur d'un vehicule routier doit, lorsque le vehicule qu'il conduit est exempt de l'obligtion d'etre muni de feux de changement de direction ou lorsque ces feux...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "373",
       "amende": {
         "min": 30,
         "max": 60
@@ -2512,9 +2512,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Feux defectueux: signaux manuels",
       "texte": "Le conducteur d'un vehicule routier doit, lorsque le vehicule qu'il conduit est exempt de l'obligation d'etre muni de feux de freinage ou lorsque ces feux sont...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "374",
       "amende": {
         "min": 30,
         "max": 60
@@ -2529,9 +2529,9 @@
       "theme": "cir_manoeuvre",
       "objet": "De facon continue",
       "texte": "Dans les cas vises aux articles 372 a 374, le conducteur d'un vehicule routier doit signaler son intention d'une facon continue et sur une distance suffisante pour ne...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "375",
       "amende": {
         "min": 30,
         "max": 60
@@ -2546,9 +2546,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Depassement",
       "texte": "Le conducteur d'un vehicule routier qui en depasse un autre doit signaler son intention au moyen des feux de changement de direction et peut, en outre, le signaler au...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "376",
       "amende": {
         "min": 30,
         "max": 60
@@ -2563,9 +2563,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Feux de detresse: utilisation",
       "texte": "Nul ne peut utiliser les feux de detresse d'un vehicule routier sauf pour des motifs de securite.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "377",
       "amende": {
         "min": 60,
         "max": 100
@@ -2580,9 +2580,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Feux clignotants ou pivotants ou avertisseurs sonores: utilisation",
       "texte": "Le conducteur d'un vehicule d'urgence ne doit actionner les feux clignotants ou pivotants ou les avertisseurs sonores ou un dispositif de changement de signaux lumineux...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "378",
       "amende": {
         "min": 60,
         "max": 100
@@ -2597,9 +2597,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Feux jaunes clignotants ou pivotants: utilisation",
       "texte": "Le conducteur d'un vehicule routier ne doit actionner les feux jaunes clignotants ou pivotants dont est muni son vehicule que dans l'exercice de ses fonctions et si les...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "379",
       "amende": {
         "min": 60,
         "max": 100
@@ -2673,7 +2673,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-382.2",
@@ -2727,7 +2727,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-382.6",
@@ -2770,9 +2770,9 @@
       "theme": "sta_position",
       "objet": "La nuit",
       "texte": "Lorsque par necessite le conducteur d'un vehicule routier immobilise son vehicule sur une chaussee pendant la nuit, il doit garder allumes les feux de position ou...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "385",
       "amende": {
         "min": 30,
         "max": 60
@@ -2801,9 +2801,9 @@
       "theme": "sta_handicape",
       "objet": "Personne handicapee",
       "texte": "Malgre les interdictions prevues a l'article 386 et dans la mesure ou cette manoeuvre peut etre effectuee sans danger, le conducteur d'un vehicule routier qui transporte...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "387",
       "amende": {
         "min": 30,
         "max": 60
@@ -2852,9 +2852,9 @@
       "theme": "sta_remorquage",
       "objet": "Un agent de la paix est autorise a faire",
       "texte": "Un agent de la paix est autorise a faire deplacer et remiser au plus proche endroit convenable, aux frais de son proprietaire, un vehicule routier immobilise...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "390",
       "amende": null,
       "parametres": {},
       "note": null
@@ -2883,9 +2883,9 @@
       "theme": "sta_remorquage",
       "objet": "Un agent de la paix est autorise a faire",
       "texte": "Un agent de la paix est autorise a faire deplacer et remiser au plus proche endroit convenable, aux frais de son proprietaire, un vehicule abandonne sur un chemin public.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "392",
       "amende": null,
       "parametres": {},
       "note": null
@@ -2897,9 +2897,9 @@
       "theme": "sta_remorquage",
       "objet": "Lorsqu'un agent de la paix procede au",
       "texte": "Lorsqu'un agent de la paix procede au remisage d'un vehicule abandonne, il doit effectuer les recherches raisonnables en vue de retrouver le proprietaire du vehicule. Si...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "393",
       "amende": null,
       "parametres": {},
       "note": null
@@ -2911,8 +2911,8 @@
       "theme": "sta_remorquage",
       "objet": "Les articles 391 a 393 s'appliquent egalement",
       "texte": "Les articles 391 a 393 s'appliquent egalement au vehicule routier abandonne sur un terrain prive, lorsque le proprietaire de ce terrain en demande le deplacement a un...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
@@ -2964,7 +2964,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-394.13",
@@ -3015,7 +3015,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-394.3",
@@ -3032,7 +3032,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-394.5",
@@ -3049,7 +3049,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-394.6",
@@ -3195,7 +3195,7 @@
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 400 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-401",
@@ -3255,9 +3255,9 @@
       "theme": "cir_priorite",
       "objet": "Quitter propriete privee",
       "texte": "Le conducteur d'un vehicule routier ou d'une bicyclette qui quitte une propriete privee pour traverser un chemin public ou s'y engager, doit ceder le passage a tout...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "404",
       "amende": {
         "min": 100,
         "max": 200
@@ -3272,9 +3272,9 @@
       "theme": "cir_priorite",
       "objet": "Acceder propriete privee",
       "texte": "Le conducteur d'un vehicule routier ou d'une bicyclette qui circule sur un chemin public et qui veut acceder a une propriete privee doit ceder le passage a tout vehicule...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "405",
       "amende": {
         "min": 100,
         "max": 200
@@ -3289,9 +3289,9 @@
       "theme": "cir_priorite",
       "objet": "Faciliter le passage: aux vehicules d'urgence",
       "texte": "Le conducteur d'un vehicule routier ou d'une bicyclette doit faciliter le passage d'un vehicule d'urgence dont les signaux lumineux ou sonores sont en marche, en...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "406",
       "amende": {
         "min": 60,
         "max": 100
@@ -3306,9 +3306,9 @@
       "theme": "cir_priorite",
       "objet": "A un autobus",
       "texte": "A l'interieur de la Ville le conducteur d'un vehicule routier doit ceder le passage a un autobus dont le conducteur actionne les feux de changement de direction en vue...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "407",
       "amende": {
         "min": 100,
         "max": 200
@@ -3323,9 +3323,9 @@
       "theme": "usa_pietons",
       "objet": "A un pieton en face d'un feu blanc ou feu clignotant de pietons",
       "texte": "Le conducteur d'un vehicule routier ou d'une bicyclette doit ceder le passage a un pieton qui traverse en face d'un feu blanc ou d'un feu clignotant de pietons.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "408",
       "amende": {
         "min": 100,
         "max": 200
@@ -3340,9 +3340,9 @@
       "theme": "usa_pietons",
       "objet": "A un pieton face a un feu vert",
       "texte": "A une intersection reglementee par des feux de circulation, le conducteur d'un vehicule routier ou d'une bicyclette doit ceder le passage a un pieton qui fait face a un...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "409",
       "amende": {
         "min": 100,
         "max": 200
@@ -3357,9 +3357,9 @@
       "theme": "usa_pietons",
       "objet": "Immobilisation: face a un pieton qui traverse dans passage pour pietons",
       "texte": "Lorsqu'un pieton s'engage dans un passage pour pieton, le conducteur d'un vehicule routier doit immobiliser son vehicule et lui permettre de traverser et le conducteur...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "410",
       "amende": {
         "min": 100,
         "max": 200
@@ -3374,9 +3374,9 @@
       "theme": "cir_priorite",
       "objet": "Immobilisation: face a un signal a un passage a niveau",
       "texte": "A un passage a niveau, le conducteur d'un vehicule routier ou d'une bicyclette doit immobiliser son vehicule a moins de 5 metres de la voie ferree lorsqu'une...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "411",
       "amende": {
         "min": 100,
         "max": 200
@@ -3391,9 +3391,9 @@
       "theme": "cir_priorite",
       "objet": "Passage a niveau: espace suffisant",
       "texte": "Le conducteur d'un vehicule routier ne peut s'engager sur un passage a niveau lorsqu'il n'existe pas devant son vehicule un espace suffisant lui permettant de le...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "412",
       "amende": {
         "min": 30,
         "max": 60
@@ -3408,9 +3408,9 @@
       "theme": "cir_priorite",
       "objet": "Immobilisation: autobus, minibus ou vehicule transportant matieres dangereuses face a un passage a niveau",
       "texte": "Le conducteur d'un autobus, d'un minibus ou d'un vehicule routier transportant certaines categories de matieres dangereuses determinees par reglement doit, a tout...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "413",
       "amende": {
         "min": 200,
         "max": 300
@@ -3425,9 +3425,9 @@
       "theme": "cir_acces_limite",
       "objet": "Chemin a acces limite",
       "texte": "Le conducteur d'un vehicule routier ne peut s'engager sur un chemin a acces limite ou quitter si ce n'est aux points d'acces ou de sortie determines par la Ville.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "415",
       "amende": {
         "min": 100,
         "max": 200
@@ -3442,9 +3442,9 @@
       "theme": "cir_acces_limite",
       "objet": "Chemin a acces limite: marche arriere",
       "texte": "Le conducteur d'un vehicule routier ne peut faire marche arriere sur un chemin a acces limite ou sur ses voies d'entree ou de sortie.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "416",
       "amende": {
         "min": 100,
         "max": 200
@@ -3459,9 +3459,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Marche arriere",
       "texte": "Le conducteur d'un vehicule routier ne peut faire marche arriere a moins que cette manoeuvre puisse etre effectue sans danger et sans gene pour la circulation.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "417",
       "amende": {
         "min": 30,
         "max": 60
@@ -3484,7 +3484,7 @@
         "max": 200
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 418 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-419",
@@ -3501,7 +3501,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 419 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-419.1",
@@ -3518,7 +3518,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-420",
@@ -3527,9 +3527,9 @@
       "theme": "cir_acces_limite",
       "objet": "Un agent de la paix peut interdire l'acces de",
       "texte": "Un agent de la paix peut interdire l'acces de tout vehicule ou de certains d'entre eux a un chemin public si des motifs d'urgence le justifient.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "420",
       "amende": null,
       "parametres": {},
       "note": null
@@ -3541,9 +3541,9 @@
       "theme": "cir_acces_limite",
       "objet": "Circulation restreinte ou interdite",
       "texte": "Nul ne peut conduire un vehicule dont la circulation est restreinte ou interdite en vertu de l'article 419 et 420 pendant les periodes et aux endroits decretes en vertu...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "421",
       "amende": {
         "min": 100,
         "max": 200
@@ -3558,9 +3558,9 @@
       "theme": "vit_defaut",
       "objet": "Course, pari ou enjeu",
       "texte": "Nul ne peut conduire un vehicule routier pour une course avec un autre vehicule, un pari ou un enjeu, sauf s'il s'agit d'un rallye effectue conformement aux normes...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "422",
       "amende": {
         "min": 300,
         "max": 600
@@ -3575,9 +3575,9 @@
       "theme": "veh_equipement",
       "objet": "Faisceau lumineux vers l'arriere",
       "texte": "Sous reserve de l'article 224 du Code de la Securite Routiere, nul ne circuler avec un vehicule routier muni de phares blancs allumes projetant un faisceau lumineux vers...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "423",
       "amende": {
         "min": 200,
         "max": 300
@@ -3592,9 +3592,9 @@
       "theme": "veh_equipement",
       "objet": "Phares et feux integres: utilization",
       "texte": "Le conducteur d'un vehicule routier doit, durant la nuit ou lorsque les conditions atmospheriques le necessitent, allumer les phares et les feux integres de son...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "424",
       "amende": {
         "min": 60,
         "max": 100
@@ -3609,9 +3609,9 @@
       "theme": "veh_equipement",
       "objet": "Diminution de l'eclairage",
       "texte": "Le conducteur d'un vehicule routier doit diminuer l'intensite de l'eclairage avant de son vehicule s'il parvient a moins de 150m. d'un vehicule qu'il va croiser, s'il...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "425",
       "amende": {
         "min": 60,
         "max": 100
@@ -3626,9 +3626,9 @@
       "theme": "veh_passagers",
       "objet": "Nombre dans vehicule routier",
       "texte": "Le conducteur d'un vehicule routier ne peut transporter plus de passagers qu'il n'y a de places disponibles pour les asseoir. Le premier alinea ne s'applique pas au...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "426",
       "amende": {
         "min": 30,
         "max": 60
@@ -3643,9 +3643,9 @@
       "theme": "veh_passagers",
       "objet": "Nombre sur banquette avant",
       "texte": "Nul ne peut conduire un vehicule routier lorsque la banquette avant est occupee par plus de trois personnes ou lorsque plus de deux personnes ont pris place a l'avant du...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "427",
       "amende": {
         "min": 30,
         "max": 60
@@ -3660,9 +3660,9 @@
       "theme": "veh_passagers",
       "objet": "Interdiction dans remorque ou semi-remorque en movement",
       "texte": "Nul ne peut prendre place dans une remorque ou une semi-remorque en mouvement ou tolerer qu'une telle pratique ait lieu. Cependant, une remorque ou une semi-remorque...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "428",
       "amende": {
         "min": 30,
         "max": 60
@@ -3677,9 +3677,9 @@
       "theme": "veh_passagers",
       "objet": "Monter ou descendre vehicule en movement",
       "texte": "Nul ne peut monter ou descendre d'un vehicule en mouvement ou tolerer qu'une telle pratique ait lieu.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "429",
       "amende": {
         "min": 30,
         "max": 60
@@ -3694,9 +3694,9 @@
       "theme": "veh_passagers",
       "objet": "Ouvrir la portiere: vehicule immobilise",
       "texte": "Nul ne peut ouvrir la portiere d'un vehicule routier a moins que ce vehicule ne soit immobilise et sans s'etre assure qu'il peut effectuer cette manoeuvre dans danger.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "430",
       "amende": {
         "min": 30,
         "max": 60
@@ -3711,9 +3711,9 @@
       "theme": "veh_passagers",
       "objet": "Ouvrir la portiere: interdictions",
       "texte": "Nul ne peut laisser ouverte la portiere d'un vehicule routier sauf pour y faire monter ou en faire descendre une personne ou y placer ou en sortir un bien.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "431",
       "amende": {
         "min": 30,
         "max": 60
@@ -3728,9 +3728,9 @@
       "theme": "veh_passagers",
       "objet": "Circulation: autobus ou minibus",
       "texte": "Le conducteur d'un autobus ou d'un minibus doit, lorsqu'il fait monter ou descendre des passagers, immobiliser son vehicule a l'extreme droite de la chaussee ou aux...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "432",
       "amende": {
         "min": 30,
         "max": 60
@@ -3745,9 +3745,9 @@
       "theme": "veh_passagers",
       "objet": "Passager sur une partie exterieure",
       "texte": "Nul ne peut se tenir sur le marchepied ou sur une autre partie exterieure d'un vehicule routier en mouvement ou tolerer qu'une telle pratique ait lieu. Toutefois, une...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "433",
       "amende": {
         "min": 30,
         "max": 60
@@ -3770,7 +3770,7 @@
         "max": 60
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 434 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-435",
@@ -3779,9 +3779,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Crisser les pneus",
       "texte": "Le conducteur d'un vehicule routier ne peut, sauf en cas de necessite, faire crisser les pneus de son vehicule.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "435",
       "amende": {
         "min": 30,
         "max": 60
@@ -3796,9 +3796,9 @@
       "theme": "cir_manoeuvre",
       "objet": "Freiner brusquement",
       "texte": "Le conducteur d'un vehicule routier ne peut freiner brusquement a moins d'y etre oblige pour des raisons de securite.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "436",
       "amende": {
         "min": 30,
         "max": 60
@@ -3813,9 +3813,9 @@
       "theme": "sta_remorquage",
       "objet": "Remorquage a l'aide d'une barre",
       "texte": "Nul ne peut tirer a l'aide d'un vehicule routier un autre vehicule routier dont les roues demeurent au sol, a moins que celui-ci ne soit solidement retenu au moyen d'une...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "437",
       "amende": {
         "min": 60,
         "max": 100
@@ -3830,9 +3830,9 @@
       "theme": "sta_remorquage",
       "objet": "Remorquer un vehicule endommage",
       "texte": "Nul ne peut deplacer ou remorquer un vehicule routier endommage sans enlever tout objet qui s'en est detache.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "438",
       "amende": {
         "min": 60,
         "max": 100
@@ -3855,7 +3855,7 @@
         "max": 60
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 439 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-440",
@@ -3872,7 +3872,7 @@
         "max": 60
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 440 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-441",
@@ -3889,7 +3889,7 @@
         "max": 100
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 441 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-442",
@@ -3898,9 +3898,9 @@
       "theme": "veh_equipement",
       "objet": "Obstruction a la vue du conducteur",
       "texte": "Nul ne peut conduire un vehicule routier lorsqu'un passager, un animal ou un objet est place de facon a obstruer la vue du conducteur ou a gener la conduite du vehicule.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "442",
       "amende": {
         "min": 30,
         "max": 60
@@ -3920,7 +3920,7 @@
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 443 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-444",
@@ -3929,9 +3929,9 @@
       "theme": "usa_pietons",
       "objet": "Lorsque des feux de pietons sont installes a",
       "texte": "Lorsque des feux de pietons sont installes a une intersection, un pieton doit s'y conformer. En face d'un feu blanc, un pieton peut traverser la chaussee. En face d'un...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "444",
       "amende": null,
       "parametres": {},
       "note": null
@@ -3943,9 +3943,9 @@
       "theme": "usa_pietons",
       "objet": "Lorsqu'il n'y a pas de feux de pietons, un",
       "texte": "Lorsqu'il n'y a pas de feux de pietons, un pieton doit se conformer aux feux de circulation.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "445",
       "amende": null,
       "parametres": {},
       "note": null
@@ -3957,9 +3957,9 @@
       "theme": "usa_pietons",
       "objet": "A un passage pour pietons qui n'est pas situe",
       "texte": "A un passage pour pietons qui n'est pas situe a une intersection reglementee par des feux de circulation, un pieton doit, avant de s'y engager s'assurer qu'il peut le...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "446",
       "amende": null,
       "parametres": {},
       "note": null
@@ -3971,9 +3971,9 @@
       "theme": "usa_pietons",
       "objet": "Lorsqu'il n'y a pas d'intersections ou de",
       "texte": "Lorsqu'il n'y a pas d'intersections ou de passages pour pietons clairement identifies et situes a proximite, un pieton qui traverse un chemin public doit ceder le...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "447",
       "amende": null,
       "parametres": {},
       "note": null
@@ -3985,9 +3985,9 @@
       "theme": "usa_pietons",
       "objet": "Un pieton ne peut se tenir sur la chaussee",
       "texte": "Un pieton ne peut se tenir sur la chaussee pour solliciter son transport ou pour traiter avec l'occupant d'un vehicule.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "448",
       "amende": null,
       "parametres": {},
       "note": null
@@ -3999,9 +3999,9 @@
       "theme": "usa_pietons",
       "objet": "Un pieton ne peut solliciter son transport",
       "texte": "Un pieton ne peut solliciter son transport aux endroits ou le depassement est interdit.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "449",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4013,9 +4013,9 @@
       "theme": "usa_pietons",
       "objet": "Lorsqu'il y a une intersection ou un passage",
       "texte": "Lorsqu'il y a une intersection ou un passage pour pietons a proximite, un pieton ne peut traverser un chemin public qu'a l'un de ces endroits.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "450",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4027,9 +4027,9 @@
       "theme": "usa_pietons",
       "objet": "Un pieton ne doit traverser une intersection",
       "texte": "Un pieton ne doit traverser une intersection en diagonale que s'il y est autorise par un agent de la paix ou une signalisation.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "451",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4041,9 +4041,9 @@
       "theme": "usa_pietons",
       "objet": "Lorsqu'un trottoir borde la chaussee, un",
       "texte": "Lorsqu'un trottoir borde la chaussee, un pieton est tenu de l'utiliser. En cas d'impossibilite d'utiliser le trottoir, le pieton peut longer celui-ci sur le bord de la...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "452",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4060,7 +4060,7 @@
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 453 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-453.1",
@@ -4077,7 +4077,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-454",
@@ -4091,7 +4091,7 @@
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 454 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-454.2",
@@ -4108,7 +4108,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-454.4",
@@ -4125,7 +4125,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-454.5",
@@ -4142,7 +4142,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-454.6",
@@ -4159,7 +4159,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-455",
@@ -4168,9 +4168,9 @@
       "theme": "veh_ecoliers",
       "objet": "Passagers assis",
       "texte": "Le conducteur d'un autobus ou minibus affecte au transport d'ecoliers doit s'assurer que toutes les personnes sont assises avant de mettre son vehicule en mouvement et...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "455",
       "amende": {
         "min": 200,
         "max": 300
@@ -4185,9 +4185,9 @@
       "theme": "veh_ecoliers",
       "objet": "Utilisation des feux intermittents",
       "texte": "Le conducteur d'un autobus ou minibus affecte au transport d'ecoliers ne peut mettre en marche les feux intermittents de son vehicule que dans les circonstances prevues...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "458",
       "amende": {
         "min": 200,
         "max": 300
@@ -4202,9 +4202,9 @@
       "theme": "veh_ecoliers",
       "objet": "Utilisation des feux intermittents",
       "texte": "Nul ne peut mettre en marche les feux intermittents lorsque le vehicule qui est muni de ces feux n'est pas utilise pour effectuer le transport auquel s'applique la...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "459",
       "amende": {
         "min": 200,
         "max": 300
@@ -4219,9 +4219,9 @@
       "theme": "veh_ecoliers",
       "objet": "Depasser ou croiser",
       "texte": "Le conducteur d'un vehicule routier qui approche d'un autobus ou minibus affecte au transport d'ecoliers dont les feux intermittents sont en marche doit immobiliser son...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "460",
       "amende": {
         "min": 200,
         "max": 300
@@ -4236,9 +4236,9 @@
       "theme": "veh_ecoliers",
       "objet": "Le premier alinea de l'article 426 et les",
       "texte": "Le premier alinea de l'article 426 et les articles 455 et 460 s'appliquent en tout temps au transport de toute personne agee de moins de 18 ans effectue au moyen...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "461",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4250,8 +4250,8 @@
       "theme": "cir_acces_limite",
       "objet": "La Ville est autorisee a etablir des routes",
       "texte": "La Ville est autorisee a etablir des routes de camions en designant certaines rues sur lesquelles les camions d'une capacite de 1 820kg ou plus devront circuler. Ces...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
@@ -4264,8 +4264,8 @@
       "theme": "cir_acces_limite",
       "objet": "Usage des routes de camions",
       "texte": "Il est defendu a tout conducteur de camions d'une capacite de 1 829kg ou plus de circuler sur des chemins publics ou parties de chemins publics a l'exception de ceux...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": {
         "min": 25,
@@ -4289,7 +4289,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 464 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-465",
@@ -4306,7 +4306,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 465 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-471",
@@ -4323,7 +4323,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 471 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-472",
@@ -4332,9 +4332,9 @@
       "theme": "veh_charge",
       "objet": "Chargement dangereux",
       "texte": "Un agent de la paix qui a des motifs raisonnables de croire que le chargement d'un vehicule routier presente un danger, peut exiger que ce vehicule soit conduit dans un...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "472",
       "amende": {
         "min": 30,
         "max": 300
@@ -4349,8 +4349,8 @@
       "theme": "veh_charge",
       "objet": "Chargement excedant de plus d'un metre",
       "texte": "A l'extremite d'un chargement ou d'un equipement excedant de plus d'un metre l'arriere d'un vehicule automobile ou d'un ensemble de vehicules routiers, le conducteur ou...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": {
         "min": 100,
@@ -4374,7 +4374,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-474.2",
@@ -4391,7 +4391,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-474.4",
@@ -4408,7 +4408,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-477",
@@ -4417,9 +4417,9 @@
       "theme": "usa_moto",
       "objet": "Circulation et conduit",
       "texte": "Le conducteur d'une motocyclette ou d'un cyclomoteur doit circuler assis sur son siege et tenir constamment le guidon. Le conducteur d'une bicyclette doit circuler a...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "477",
       "amende": {
         "min": 30,
         "max": 60
@@ -4434,9 +4434,9 @@
       "theme": "usa_moto",
       "objet": "Conduire entre 2 rangees",
       "texte": "Nul ne peut conduire une motocyclette, un cyclomoteur ou une bicyclette entre deux rangees de vehicules circulant sur des voies contigues.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "478",
       "amende": {
         "min": 100,
         "max": 200
@@ -4451,9 +4451,9 @@
       "theme": "usa_moto",
       "objet": "Sur chemin a acces limite",
       "texte": "Nul ne peut conduire une motocyclette munie d'un moteur d'une cylindree d'au plus 125 cm³, une bicyclette ou un autre vehicule non motorise sur un chemin a acces limite...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "479",
       "amende": {
         "min": 100,
         "max": 200
@@ -4468,9 +4468,9 @@
       "theme": "usa_moto",
       "objet": "Passager",
       "texte": "Le conducteur d'une motocyclette ou d'un cyclomoteur ne peut transporter aucune personne, a moins que son vehicule ne soit muni d'un siege fixe et permanent destine a...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "480",
       "amende": {
         "min": 30,
         "max": 60
@@ -4485,9 +4485,9 @@
       "theme": "usa_moto",
       "objet": "Passager assis",
       "texte": "Le passager d'une motocyclette ou d'un cyclomoteur doit etre assis dans la direction du guidon et de facon que ses pieds reposent sur les appui-pieds, lorsque le...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "481",
       "amende": {
         "min": 30,
         "max": 60
@@ -4502,9 +4502,9 @@
       "theme": "usa_moto",
       "objet": "Phare blanc allume",
       "texte": "Le conducteur d'une motocyclette ou d'un cyclomoteur doit a tout moment maintenir allume le phare blanc de son vehicule.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "482",
       "amende": {
         "min": 30,
         "max": 60
@@ -4519,9 +4519,9 @@
       "theme": "usa_moto",
       "objet": "Circulation en groupe",
       "texte": "Les conducteurs de motocyclettes et de cyclomoteurs qui circulent en groupe de deux ou plus dans une voie de circulation doivent adopter la formation en zigzag.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "483",
       "amende": {
         "min": 100,
         "max": 200
@@ -4536,9 +4536,9 @@
       "theme": "usa_moto",
       "objet": "Passager: casque protecteur",
       "texte": "Toute personne prenant place sur une motocyclette, un cyclomoteur ou dans une caisse adjacente doit porter un casque protecteur conforme aux normes etablies par...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "484",
       "amende": {
         "min": 80,
         "max": 100
@@ -4553,9 +4553,9 @@
       "theme": "usa_velo",
       "objet": "Le conducteur d'une bicyclette ne peut",
       "texte": "Le conducteur d'une bicyclette ne peut transporter aucun passager a moins que celle-ci ne soit munie d'un siege fixe a cette fin.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "485",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4567,9 +4567,9 @@
       "theme": "usa_velo",
       "objet": "Les conducteurs de bicyclettes qui circulent",
       "texte": "Les conducteurs de bicyclettes qui circulent en groupe de deux ou plus doivent le faire a la file. En aucun cas, la file ne peut comporter plus de quinze (15)...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "486",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4586,7 +4586,7 @@
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 487 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-488",
@@ -4595,9 +4595,9 @@
       "theme": "usa_velo",
       "objet": "Le conducteur d'une bicyclette doit se",
       "texte": "Le conducteur d'une bicyclette doit se conformer a toute signalisation.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "488",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4609,9 +4609,9 @@
       "theme": "usa_velo",
       "objet": "Nul ne peut consommer des boissons",
       "texte": "Nul ne peut consommer des boissons alcoolisees alors qu'il circule a bicyclette.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "489",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4623,9 +4623,9 @@
       "theme": "usa_velo",
       "objet": "Le conducteur d'une bicyclette doit signaler",
       "texte": "Le conducteur d'une bicyclette doit signaler son intention de facon continue et sur une distance suffisante pour ne pas mettre en peril la securite des usagers du chemin...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "375",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4637,9 +4637,9 @@
       "theme": "usa_velo",
       "objet": "Sous reserve de l'article 479, nul ne peut",
       "texte": "Sous reserve de l'article 479, nul ne peut circuler a bicyclette sur un chemin public sur lequel la vitesse maximale permise est de plus de 50 km/h, sauf dans l'un des...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "384",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4656,7 +4656,7 @@
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 492 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-492.1",
@@ -4673,7 +4673,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-492.2",
@@ -4690,7 +4690,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-492.3",
@@ -4707,7 +4707,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-492.4",
@@ -4724,7 +4724,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Aucun article CSR de meme numero; disposition possiblement municipale — a verifier."
     },
     {
       "id": "SM-493",
@@ -4733,9 +4733,9 @@
       "theme": "veh_animaux",
       "objet": "Circulation sur chemin public",
       "texte": "Nul ne peut faire circuler des animaux de ferme sur un chemin public ou leur faire traverser ce chemin a moins qu'ils ne soient escortes par deux personnes, chacune...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "493",
       "amende": {
         "min": 30,
         "max": 60
@@ -4750,9 +4750,9 @@
       "theme": "veh_animaux",
       "objet": "Circulation durant la nuit",
       "texte": "Nul ne peut, durant la nuit, faire circuler des animaux de ferme sur un chemin public ou leur faire traverser ce chemin.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "494",
       "amende": {
         "min": 60,
         "max": 100
@@ -4767,9 +4767,9 @@
       "theme": "veh_animaux",
       "objet": "Circulation sur chemin a acces limite",
       "texte": "Nul ne peut faire circuler des animaux de ferme sur un chemin a acces limite ou leur faire traverser ce chemin.",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "495",
       "amende": {
         "min": 60,
         "max": 100
@@ -4792,7 +4792,7 @@
         "max": 100
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 496 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-497",
@@ -4809,7 +4809,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 497 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-498",
@@ -4826,7 +4826,7 @@
         "max": 100
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 498 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-499",
@@ -4843,7 +4843,7 @@
         "max": 60
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 499 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-500",
@@ -4852,8 +4852,8 @@
       "theme": "nui_divers",
       "objet": "Circulation: entrave avec obstacle",
       "texte": "Nul ne peut, a moins d'y etre autorise par la Ville, entraver la circulation sur ce chemin au moyen d'un obstacle. Un agent de la paix est autorise a enlever cet...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": {
         "min": 60,
@@ -4869,8 +4869,8 @@
       "theme": "nui_divers",
       "objet": "Circulation: entrave avec obstacle sur chemin prive",
       "texte": "Nul ne peut entraver, au moyen d'un obstacle, la libre circulation sur un chemin servant de deviation a un chemin public, meme sur une propriete privee. Un agent de la...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": {
         "min": 60,
@@ -4886,9 +4886,9 @@
       "theme": "nui_divers",
       "objet": "Circulation: entrave avec systeme d'eclairage",
       "texte": "Nul ne peut installer, sur une propriete privee, un systeme d'eclairage susceptible de nuire a la visibilite des conducteurs de vehicules routiers qui circulent sur un...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "502",
       "amende": {
         "min": 100,
         "max": 200
@@ -4903,9 +4903,9 @@
       "theme": "nui_divers",
       "objet": "La Ville peut, si elle a des motifs",
       "texte": "La Ville peut, si elle a des motifs raisonnables de croire qu'un systeme d'eclairage est installe sur une propriete privee en contravention a l'article 502, delivrer au...",
-      "statut": "a_valider",
-      "recommandation": "valider",
-      "renvoi_csr": null,
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "503",
       "amende": null,
       "parametres": {},
       "note": null
@@ -4925,7 +4925,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 504 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-505",
@@ -4934,8 +4934,8 @@
       "theme": "nui_divers",
       "objet": "Course et procession dans les rues",
       "texte": "Personne ne doit courir, ni prendre part a une course dans les rues ou sur les trottoirs de facon a pousser ou heurter les pietons ou a causer une gene, un ennui ou une...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": {
         "min": 25,
@@ -4959,7 +4959,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 506 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-507",
@@ -4985,8 +4985,8 @@
       "theme": "nui_divers",
       "objet": "Annonce et demonstration",
       "texte": "Personne ne doit faire usage dans un chemin public, dans une ruelle ou dans un endroit public d'un appareil sonore, dans le but d'attirer l'attention sur son emploi ou...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": {
         "min": 25,
@@ -5010,7 +5010,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 509 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-510",
@@ -5019,8 +5019,8 @@
       "theme": "adm_autorite",
       "objet": "Interdiction d'enlever un billet d'assignation",
       "texte": "Il est interdit a toute personne autre que le conducteur du vehicule d'enlever un avis qui a ete place par un agent de la paix ou par tout officier municipal autorise.",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": {
         "min": 25,
@@ -5036,8 +5036,8 @@
       "theme": "adm_autorite",
       "objet": "Tout agent de la paix qui, dans l'execution",
       "texte": "Tout agent de la paix qui, dans l'execution des fonctions qui lui sont conferees en vertu du present reglement, a un motif raisonnable de croire qu'une infraction a ce...",
-      "statut": "a_valider",
-      "recommandation": "valider",
+      "statut": "propre",
+      "recommandation": "conserver",
       "renvoi_csr": null,
       "amende": null,
       "parametres": {},
@@ -5075,7 +5075,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 513 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-514",
@@ -5092,7 +5092,7 @@
         "max": 300
       },
       "parametres": {},
-      "note": null
+      "note": "Le CSR 2026 a un article 514 au texte different (numerotation modifiee depuis 1987, ou variante locale) — correspondance a retrouver."
     },
     {
       "id": "SM-601",
