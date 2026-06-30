@@ -1,4 +1,18 @@
 {
+  "villes": [
+    {
+      "id": "SM",
+      "label": "Sainte-Marthe-sur-le-Lac",
+      "reglement": "822",
+      "court": "SMSL #822"
+    },
+    {
+      "id": "DM",
+      "label": "Deux-Montagnes",
+      "reglement": "1125",
+      "court": "DM #1125"
+    }
+  ],
   "domaines": [
     {
       "id": "sig",
