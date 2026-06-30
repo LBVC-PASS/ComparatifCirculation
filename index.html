@@ -1,0 +1,2656 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concordance & harmonisation — Règlement de circulation</title>
+<style>
+  :root{
+    --bg:#f8f7f4; --surface:#ffffff; --ink:#1c2430; --muted:#6b7280;
+    --line:#e7e4dd; --line-strong:#d9d5cc;
+    --brand:#1f3a5f; --brand-soft:#eef2f7;
+    /* statuts */
+    --propre:#1f7a52; --propre-bg:#e8f4ed;
+    --redon:#b45309; --redon-bg:#fbf0df;
+    --diverg:#c0392b; --diverg-bg:#fbe7e4;
+    --desuet:#4f5d80; --desuet-bg:#ecedf4;
+    --hybride:#6f4fb0; --hybride-bg:#f0ebfa;
+    --valider:#5b6470; --valider-bg:#eceef1;
+    --lacune:#3f51b5; --lacune-bg:#e9ebf8;
+    --harmon:#1f7a52; --harmon-bg:#e8f4ed;
+    --radius:10px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+  /* header */
+  header.top{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:22px}
+  .eyebrow{font:600 11px/1 -apple-system,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:30px;line-height:1.15;margin:0 0 8px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:14px;max-width:62ch}
+  .sub b{color:var(--ink);font-weight:600}
+  /* summary */
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 10px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+  .stat .n{font-family:Georgia,serif;font-size:26px;font-weight:600;line-height:1}
+  .stat .l{font-size:12px;color:var(--muted);margin-top:6px}
+  .stat.divg .n{color:var(--diverg)} .stat.redo .n{color:var(--redon)} .stat.lacu .n{color:var(--lacune)}
+  /* tabs */
+  .tabs{display:flex;gap:4px;margin:24px 0 16px;border-bottom:1px solid var(--line)}
+  .tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+    padding:10px 14px;font:600 14px/1 inherit;color:var(--muted);cursor:pointer;margin-bottom:-1px}
+  .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--brand)}
+  .tab:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+  /* controls */
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+  .controls input[type=search],.controls select{
+    font:14px inherit;padding:8px 11px;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink)}
+  .controls input[type=search]{min-width:230px;flex:1 1 230px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{appearance:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);
+    border-radius:999px;padding:5px 11px;font:600 12px/1 inherit;cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .chip:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .muted{color:var(--muted)}
+  /* badges */
+  .badge{display:inline-flex;align-items:center;gap:5px;border-radius:6px;padding:3px 8px;font:600 11.5px/1.3 inherit;white-space:nowrap}
+  .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.85}
+  .s-propre{color:var(--propre);background:var(--propre-bg)}
+  .s-redondant_csr{color:var(--redon);background:var(--redon-bg)}
+  .s-divergent{color:var(--diverg);background:var(--diverg-bg)}
+  .s-desuet{color:var(--desuet);background:var(--desuet-bg)}
+  .s-hybride{color:var(--hybride);background:var(--hybride-bg)}
+  .s-a_valider{color:var(--valider);background:var(--valider-bg)}
+  .f-harmonise{color:var(--harmon);background:var(--harmon-bg)}
+  .f-divergent{color:var(--diverg);background:var(--diverg-bg)}
+  .f-lacune{color:var(--lacune);background:var(--lacune-bg)}
+  .f-redondant_csr{color:var(--redon);background:var(--redon-bg)}
+  .f-partiel{color:var(--desuet);background:var(--desuet-bg)}
+  .pill{display:inline-block;font:600 11px/1 inherit;color:var(--muted);border:1px solid var(--line-strong);border-radius:5px;padding:3px 6px}
+  .pill.dm{color:#16507a;border-color:#bcd3e6;background:#eef5fb}
+  .pill.sm{color:#7a4a16;border-color:#e6d2bc;background:#fbf4ee}
+  /* RAPPORT view */
+  .domaine{margin:26px 0 8px;font-family:Georgia,serif;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--brand);border-bottom:1px solid var(--line);padding-bottom:6px}
+  .theme{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin:10px 0;overflow:hidden}
+  .theme>summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:center;gap:12px}
+  .theme>summary::-webkit-details-marker{display:none}
+  .theme>summary:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+  .theme .tname{font-weight:600;flex:1 1 auto}
+  .theme .caret{color:var(--muted);transition:transform .15s}
+  .theme[open] .caret{transform:rotate(90deg)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+  .col{padding:12px 16px}
+  .col+.col{border-left:1px solid var(--line)}
+  .col h4{margin:0 0 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .fiche{padding:9px 0;border-top:1px dashed var(--line)}
+  .fiche:first-of-type{border-top:0}
+  .fiche .fhead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .fiche .art{font-weight:600;font-size:13px}
+  .fiche .obj{font-size:14px}
+  .fiche .txt{color:var(--muted);font-size:13px;margin-top:3px}
+  .fiche .meta{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .fiche .note{margin-top:6px;font-size:12.5px;color:#8a5a14;background:#fdf6ea;border-left:3px solid #e0b878;padding:6px 9px;border-radius:0 6px 6px 0}
+  .empty{color:var(--muted);font-style:italic;font-size:13px;padding:6px 0}
+  /* TABLE view */
+  table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.5px}
+  th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:#fbfaf8;position:sticky;top:0}
+  tbody tr:hover{background:#fbfaf7}
+  td .objt{font-weight:600}
+  td .txtt{color:var(--muted);font-size:12.5px;margin-top:2px}
+  .count{color:var(--muted);font-size:13px;margin:0 0 10px}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+  @media (max-width:760px){
+    .summary{grid-template-columns:repeat(2,1fr)}
+    .cols{grid-template-columns:1fr}
+    .col+.col{border-left:0;border-top:1px solid var(--line)}
+    h1{font-size:24px}
+    .hide-sm{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Codification &middot; territoire RPLDM</div>
+    <h1>Concordance &amp; harmonisation</h1>
+    <p class="sub">Règlement de circulation — <b>Sainte-Marthe-sur-le-Lac&nbsp;#822</b> comparé à <b>Deux-Montagnes&nbsp;#1125</b>. Repère les articles redondants avec le <b>CSR</b>, les <b>divergences</b> à harmoniser entre les deux villes desservies par la même Régie de police, et les <b>lacunes</b>. Données de première passe — à réviser et enrichir.</p>
+  </header>
+
+  <section class="summary" id="summary"></section>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-rapport" aria-selected="true" aria-controls="view-rapport">Rapport d'harmonisation</button>
+    <button class="tab" role="tab" id="tab-table" aria-selected="false" aria-controls="view-table">Table des articles</button>
+  </div>
+
+  <div class="controls">
+    <input type="search" id="q" placeholder="Rechercher (objet, article, mot-clé)…" aria-label="Rechercher">
+    <select id="fdomaine" aria-label="Filtrer par domaine"></select>
+    <div class="chips" id="fstatut"></div>
+  </div>
+
+  <section id="view-rapport" role="tabpanel" aria-labelledby="tab-rapport"></section>
+  <section id="view-table" role="tabpanel" aria-labelledby="tab-table" hidden>
+    <p class="count" id="tcount"></p>
+    <table>
+      <thead><tr><th>Ville</th><th>Art.</th><th>Objet</th><th class="hide-sm">Thème</th><th>Statut</th><th>Reco</th><th class="hide-sm">CSR</th></tr></thead>
+      <tbody id="trows"></tbody>
+    </table>
+  </section>
+
+  <footer>
+    Outil piloté par les données : <code>taxonomie.json</code> + <code>articles.json</code>. Modifier le JSON met l'app à jour — aucune reconstruction. Pointage des statuts à valider (compétence/ultra vires) avec le greffe. Phase 2 : ingestion des annexes (listes de rues) et ajout de Pointe-Calumet et Saint-Joseph-du-Lac.
+  </footer>
+</div>
+
+<script id="emb-tax" type="application/json">{
+  "domaines": [
+    {
+      "id": "sig",
+      "label": "Signalisation"
+    },
+    {
+      "id": "cir",
+      "label": "Circulation (mouvement)"
+    },
+    {
+      "id": "vit",
+      "label": "Vitesse"
+    },
+    {
+      "id": "sta",
+      "label": "Stationnement / immobilisation"
+    },
+    {
+      "id": "usa",
+      "label": "Usagers vulnerables & micromobilite"
+    },
+    {
+      "id": "veh",
+      "label": "Vehicules particuliers"
+    },
+    {
+      "id": "nui",
+      "label": "Nuisances liees a la circulation"
+    },
+    {
+      "id": "adm",
+      "label": "Administration & penalites"
+    }
+  ],
+  "themes": [
+    {
+      "id": "sig_arret",
+      "domaine": "sig",
+      "label": "Panneaux d'arret"
+    },
+    {
+      "id": "sig_ceder",
+      "domaine": "sig",
+      "label": "Ceder le passage"
+    },
+    {
+      "id": "sig_feux",
+      "domaine": "sig",
+      "label": "Feux de circulation"
+    },
+    {
+      "id": "sig_lumineux",
+      "domaine": "sig",
+      "label": "Signaux lumineux / voies"
+    },
+    {
+      "id": "sig_pouvoir",
+      "domaine": "sig",
+      "label": "Pouvoir d'installer la signalisation"
+    },
+    {
+      "id": "sig_respect",
+      "domaine": "sig",
+      "label": "Respect de la signalisation / signaleur"
+    },
+    {
+      "id": "sig_protection",
+      "domaine": "sig",
+      "label": "Signalisation non autorisee / degradation"
+    },
+    {
+      "id": "cir_voies",
+      "domaine": "cir",
+      "label": "Utilisation des voies / lignes"
+    },
+    {
+      "id": "cir_priorite",
+      "domaine": "cir",
+      "label": "Priorite de passage / intersections"
+    },
+    {
+      "id": "cir_depassement",
+      "domaine": "cir",
+      "label": "Depassement"
+    },
+    {
+      "id": "cir_virage",
+      "domaine": "cir",
+      "label": "Virages & demi-tours"
+    },
+    {
+      "id": "cir_vdfr",
+      "domaine": "cir",
+      "label": "Virage a droite au feu rouge"
+    },
+    {
+      "id": "cir_sens_unique",
+      "domaine": "cir",
+      "label": "Sens unique"
+    },
+    {
+      "id": "cir_manoeuvre",
+      "domaine": "cir",
+      "label": "Signalement des manoeuvres"
+    },
+    {
+      "id": "cir_distance",
+      "domaine": "cir",
+      "label": "Distance entre vehicules"
+    },
+    {
+      "id": "cir_acces_limite",
+      "domaine": "cir",
+      "label": "Chemins a acces limite / tonnage"
+    },
+    {
+      "id": "vit_defaut",
+      "domaine": "vit",
+      "label": "Limite de vitesse par defaut"
+    },
+    {
+      "id": "vit_zone",
+      "domaine": "vit",
+      "label": "Zones de vitesse designees (scolaire, etc.)"
+    },
+    {
+      "id": "vit_conditions",
+      "domaine": "vit",
+      "label": "Reduction selon conditions / lenteur"
+    },
+    {
+      "id": "vit_radar",
+      "domaine": "vit",
+      "label": "Detecteur de radar / mesure de vitesse"
+    },
+    {
+      "id": "sta_interdit",
+      "domaine": "sta",
+      "label": "Interdictions / endroits prohibes"
+    },
+    {
+      "id": "sta_nuit_hiver",
+      "domaine": "sta",
+      "label": "Stationnement de nuit / hiver"
+    },
+    {
+      "id": "sta_duree",
+      "domaine": "sta",
+      "label": "Duree limitee / vignettes residents"
+    },
+    {
+      "id": "sta_paiement",
+      "domaine": "sta",
+      "label": "Parcometres / tarifs / lots payants"
+    },
+    {
+      "id": "sta_handicape",
+      "domaine": "sta",
+      "label": "Reserve aux personnes handicapees"
+    },
+    {
+      "id": "sta_debarcadere",
+      "domaine": "sta",
+      "label": "Debarcaderes / zones de livraison"
+    },
+    {
+      "id": "sta_transport",
+      "domaine": "sta",
+      "label": "Taxis / transport collectif"
+    },
+    {
+      "id": "sta_lots",
+      "domaine": "sta",
+      "label": "Stationnements municipaux / descente de bateaux"
+    },
+    {
+      "id": "sta_lourds",
+      "domaine": "sta",
+      "label": "Vehicules lourds / recreatifs (nuit, residentiel)"
+    },
+    {
+      "id": "sta_remorquage",
+      "domaine": "sta",
+      "label": "Remorquage / deneigement / abandon"
+    },
+    {
+      "id": "sta_position",
+      "domaine": "sta",
+      "label": "Regles de positionnement du vehicule"
+    },
+    {
+      "id": "usa_pietons",
+      "domaine": "usa",
+      "label": "Pietons / passages"
+    },
+    {
+      "id": "usa_velo",
+      "domaine": "usa",
+      "label": "Bicyclettes / voies cyclables"
+    },
+    {
+      "id": "usa_micromob",
+      "domaine": "usa",
+      "label": "AMM / trottinettes electriques"
+    },
+    {
+      "id": "usa_moto",
+      "domaine": "usa",
+      "label": "Motos / cyclomoteurs"
+    },
+    {
+      "id": "veh_ecoliers",
+      "domaine": "veh",
+      "label": "Transport d'ecoliers"
+    },
+    {
+      "id": "veh_charge",
+      "domaine": "veh",
+      "label": "Vehicules lourds / charge / livraison"
+    },
+    {
+      "id": "veh_loisirs",
+      "domaine": "veh",
+      "label": "Vehicules de loisirs (VHR, motoneige)"
+    },
+    {
+      "id": "veh_animaux",
+      "domaine": "veh",
+      "label": "Hippomobiles / chevaux / animaux"
+    },
+    {
+      "id": "nui_lavage",
+      "domaine": "nui",
+      "label": "Lavage / reparation / vente sur rue"
+    },
+    {
+      "id": "nui_peinture",
+      "domaine": "nui",
+      "label": "Circulation sur peinture fraiche"
+    },
+    {
+      "id": "nui_marques",
+      "domaine": "nui",
+      "label": "Effacement de marques (controle stationnement)"
+    },
+    {
+      "id": "nui_ceinture",
+      "domaine": "nui",
+      "label": "Ceinture de securite"
+    },
+    {
+      "id": "nui_divers",
+      "domaine": "nui",
+      "label": "Autres usages des chemins publics"
+    },
+    {
+      "id": "adm_application",
+      "domaine": "adm",
+      "label": "Champ d'application / definitions"
+    },
+    {
+      "id": "adm_autorite",
+      "domaine": "adm",
+      "label": "Autorite / agents / application"
+    },
+    {
+      "id": "adm_penalites",
+      "domaine": "adm",
+      "label": "Infractions et peines"
+    },
+    {
+      "id": "adm_finales",
+      "domaine": "adm",
+      "label": "Dispositions finales"
+    }
+  ]
+}</script>
+<script id="emb-art" type="application/json">{
+  "version": "v1-2026-06",
+  "articles": [
+    {
+      "id": "DM-1",
+      "source": "DM",
+      "numero": "1",
+      "theme": "adm_application",
+      "objet": "Objet du reglement",
+      "texte": "Complete et ajoute au CSR; les annexes font partie integrante.",
+      "statut": "desuet",
+      "recommandation": "reecrire",
+      "renvoi_csr": "C-24.2",
+      "amende": null,
+      "parametres": {},
+      "note": "Renvoi 'L.R.Q., c. C-24.2' a actualiser (RLRQ)."
+    },
+    {
+      "id": "DM-2",
+      "source": "DM",
+      "numero": "2",
+      "theme": "adm_application",
+      "objet": "Application aux proprietaires/locataires",
+      "texte": "Vise proprietaires, acquereurs et locataires (>= 1 an).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-3",
+      "source": "DM",
+      "numero": "3",
+      "theme": "adm_application",
+      "objet": "Responsabilite du proprietaire immatricule",
+      "texte": "Le titulaire de l'immatriculation est responsable.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "592",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-4",
+      "source": "DM",
+      "numero": "4",
+      "theme": "adm_finales",
+      "objet": "Remplacement du reglement 725.91",
+      "texte": "Remplace l'ancien reglement de circulation.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-5",
+      "source": "DM",
+      "numero": "5",
+      "theme": "adm_finales",
+      "objet": "Continuite des procedures",
+      "texte": "Les procedures en cours se poursuivent.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-6",
+      "source": "DM",
+      "numero": "6",
+      "theme": "adm_application",
+      "objet": "Definitions",
+      "texte": "Definitions; 'bicyclette' inclut les trottinettes.",
+      "statut": "desuet",
+      "recommandation": "reecrire",
+      "renvoi_csr": "4",
+      "amende": null,
+      "parametres": {},
+      "note": "Renvois L.R.Q. a actualiser. 'Bicyclette inclut trottinettes' = amorce micromobilite."
+    },
+    {
+      "id": "DM-7",
+      "source": "DM",
+      "numero": "7",
+      "theme": "sig_arret",
+      "objet": "Arret obligatoire",
+      "texte": "Immobiliser au panneau d'arret et ceder le passage.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "368",
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-8",
+      "source": "DM",
+      "numero": "8",
+      "theme": "sig_arret",
+      "objet": "Emplacement des panneaux d'arret",
+      "texte": "Autorise l'installation des arrets (annexe A).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-9",
+      "source": "DM",
+      "numero": "9",
+      "theme": "sig_ceder",
+      "objet": "Priorite de passage",
+      "texte": "Ceder le passage face au signal approprie.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "360",
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-10",
+      "source": "DM",
+      "numero": "10",
+      "theme": "sig_ceder",
+      "objet": "Emplacement des panneaux 'ceder'",
+      "texte": "Autorise l'installation (annexe B).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-11",
+      "source": "DM",
+      "numero": "11",
+      "theme": "sig_feux",
+      "objet": "Feu rouge",
+      "texte": "Immobiliser au feu rouge.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "359",
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-12",
+      "source": "DM",
+      "numero": "12",
+      "theme": "sig_feux",
+      "objet": "Feu rouge clignotant",
+      "texte": "Immobiliser et ceder le passage.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "359",
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-13",
+      "source": "DM",
+      "numero": "13",
+      "theme": "sig_feux",
+      "objet": "Feu jaune",
+      "texte": "Immobiliser sauf si trop engage.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "359",
+      "amende": {
+        "min": 60,
+        "max": 100
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-14",
+      "source": "DM",
+      "numero": "14",
+      "theme": "sig_feux",
+      "objet": "Feu jaune clignotant",
+      "texte": "Ralentir et ceder le passage.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "360",
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-15",
+      "source": "DM",
+      "numero": "15",
+      "theme": "sig_feux",
+      "objet": "Feu vert",
+      "texte": "Ceder aux usagers engages puis poursuivre.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "359",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-16",
+      "source": "DM",
+      "numero": "16",
+      "theme": "sig_feux",
+      "objet": "Fleche verte",
+      "texte": "Circuler dans le sens de la fleche.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "359",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-17",
+      "source": "DM",
+      "numero": "17",
+      "theme": "sig_lumineux",
+      "objet": "Signaux lumineux de voie",
+      "texte": "Circuler sous la fleche verte seulement.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "362",
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-18",
+      "source": "DM",
+      "numero": "18",
+      "theme": "sig_feux",
+      "objet": "Installation des feux",
+      "texte": "Autorise l'installation des feux (annexe C).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-19",
+      "source": "DM",
+      "numero": "19",
+      "theme": "cir_voies",
+      "objet": "Lignes de demarcation",
+      "texte": "Interdiction de franchir lignes continues.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "326",
+      "amende": {
+        "min": 200,
+        "max": 300
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-20",
+      "source": "DM",
+      "numero": "20",
+      "theme": "cir_voies",
+      "objet": "Marquage des voies",
+      "texte": "Autorise le marquage (annexe D).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-21",
+      "source": "DM",
+      "numero": "21",
+      "theme": "cir_virage",
+      "objet": "Demi-tours interdits",
+      "texte": "Interdits aux endroits designes (annexe E).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-22",
+      "source": "DM",
+      "numero": "22",
+      "theme": "cir_sens_unique",
+      "objet": "Circulation a sens unique",
+      "texte": "Circuler dans le sens indique.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "328",
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-23",
+      "source": "DM",
+      "numero": "23",
+      "theme": "cir_sens_unique",
+      "objet": "Rues a sens unique designees",
+      "texte": "Designe les sens uniques (annexe F).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-24",
+      "source": "DM",
+      "numero": "24",
+      "theme": "sta_interdit",
+      "objet": "Stationnement interdit (annexe G)",
+      "texte": "Interdit aux endroits designes en tout temps.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-24.2",
+      "source": "DM",
+      "numero": "24.2",
+      "theme": "sta_position",
+      "objet": "Stationnement rue a sens unique",
+      "texte": "Cote gauche, avant dans le sens, <30 cm.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-24.3",
+      "source": "DM",
+      "numero": "24.3",
+      "theme": "sta_position",
+      "objet": "Stationnement angulaire",
+      "texte": "Selon marques et enseignes.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-24.4",
+      "source": "DM",
+      "numero": "24.4",
+      "theme": "sta_position",
+      "objet": "Boulevard a plate-bande",
+      "texte": "Interdit a gauche.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-24.5",
+      "source": "DM",
+      "numero": "24.5",
+      "theme": "nui_divers",
+      "objet": "Ventes ambulantes depuis vehicule",
+      "texte": "Interdiction de vendre depuis un vehicule stationne.",
+      "statut": "a_valider",
+      "recommandation": "valider",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": "Pourrait relever d'un reglement nuisances/commerce."
+    },
+    {
+      "id": "DM-24.6",
+      "source": "DM",
+      "numero": "24.6",
+      "theme": "sta_lourds",
+      "objet": "Stationnement de nuit - vehicules lourds",
+      "texte": "Interdit en zone residentielle (outils, camions, recreatifs).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-24.8",
+      "source": "DM",
+      "numero": "24.8",
+      "theme": "sta_remorquage",
+      "objet": "Enlevement de la neige",
+      "texte": "Interdiction lors de travaux; remorquage aux frais.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-24.9",
+      "source": "DM",
+      "numero": "24.9",
+      "theme": "sta_interdit",
+      "objet": "Arrets prohibes (liste + annexe W)",
+      "texte": "Liste d'endroits (bornes, traverses, trottoirs...).",
+      "statut": "hybride",
+      "recommandation": "reecrire",
+      "renvoi_csr": "386",
+      "amende": null,
+      "parametres": {},
+      "note": "Liste largement reprise du CSR; ne garder que le renvoi a l'annexe W."
+    },
+    {
+      "id": "DM-25",
+      "source": "DM",
+      "numero": "25",
+      "theme": "sta_duree",
+      "objet": "Stationnement a duree/heures limitees",
+      "texte": "Selon endroits/jours/heures (annexe H).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-26",
+      "source": "DM",
+      "numero": "26",
+      "theme": "sta_nuit_hiver",
+      "objet": "Stationnement de nuit prohibe (hiver)",
+      "texte": "Interdit minuit-7h, 1er nov au 15 avr.",
+      "statut": "divergent",
+      "recommandation": "harmoniser",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {
+        "heures": "00:00-07:00",
+        "periode": "01-11 au 15-04"
+      },
+      "note": "DIVERGENT vs SMSL: periode plus longue (debute 1er nov)."
+    },
+    {
+      "id": "DM-27",
+      "source": "DM",
+      "numero": "27",
+      "theme": "sta_transport",
+      "objet": "Postes d'attente des taxis",
+      "texte": "Aux endroits prevus (annexe I).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-28",
+      "source": "DM",
+      "numero": "28",
+      "theme": "sta_transport",
+      "objet": "Taxis hors postes interdits",
+      "texte": "Interdit ailleurs qu'aux postes.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-29",
+      "source": "DM",
+      "numero": "29",
+      "theme": "sta_debarcadere",
+      "objet": "Zones de debarcadere",
+      "texte": "Etablies a l'annexe J; duree limitee.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-30",
+      "source": "DM",
+      "numero": "30",
+      "theme": "sta_transport",
+      "objet": "Zones transport public",
+      "texte": "Reservees au transport public (annexe K).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-31",
+      "source": "DM",
+      "numero": "31",
+      "theme": "sta_interdit",
+      "objet": "Voies prioritaires d'urgence (batiments)",
+      "texte": "Amenagement de voies pour vehicules d'urgence (annexe L).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 300,
+        "max": 2000
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-34",
+      "source": "DM",
+      "numero": "34",
+      "theme": "sta_handicape",
+      "objet": "Stationnement personnes handicapees",
+      "texte": "Reserve, vignette requise (annexe M).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": "388",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-35",
+      "source": "DM",
+      "numero": "35",
+      "theme": "sta_paiement",
+      "objet": "Espaces payants / parcometres",
+      "texte": "Etablit les espaces payants (annexe N).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-38",
+      "source": "DM",
+      "numero": "38",
+      "theme": "sta_paiement",
+      "objet": "Tarifs de stationnement",
+      "texte": "Tarifs a l'annexe O.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-39",
+      "source": "DM",
+      "numero": "39",
+      "theme": "sta_lots",
+      "objet": "Stationnements municipaux",
+      "texte": "Etablit les lots municipaux (annexe P).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-47",
+      "source": "DM",
+      "numero": "47",
+      "theme": "sta_paiement",
+      "objet": "Objets dans parcometres",
+      "texte": "Infraction d'introduire autre chose que monnaie.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-48",
+      "source": "DM",
+      "numero": "48",
+      "theme": "sta_lots",
+      "objet": "Parcs / descente de bateaux (vignette)",
+      "texte": "Stationnement reglemente; vignette descente de bateaux.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-50",
+      "source": "DM",
+      "numero": "50",
+      "theme": "nui_divers",
+      "objet": "Circulation dans parcs",
+      "texte": "Interdit velo/moto/motoneige sauf sentiers (annexe Q).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 100,
+        "max": 200
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-50.1",
+      "source": "DM",
+      "numero": "50.1",
+      "theme": "sta_duree",
+      "objet": "Stationnement reserve a des groupes (vignettes)",
+      "texte": "Droit exclusif selon annexe V.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-51",
+      "source": "DM",
+      "numero": "51",
+      "theme": "nui_lavage",
+      "objet": "Reparation sur rue",
+      "texte": "Interdiction de reparer sur le chemin public.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-52",
+      "source": "DM",
+      "numero": "52",
+      "theme": "nui_lavage",
+      "objet": "Lavage / vente sur rue",
+      "texte": "Interdiction de laver ou offrir en vente.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-52.3",
+      "source": "DM",
+      "numero": "52.3",
+      "theme": "sig_respect",
+      "objet": "Respect de la signalisation de stationnement",
+      "texte": "Obligation de se conformer a la signalisation.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-53",
+      "source": "DM",
+      "numero": "53",
+      "theme": "vit_defaut",
+      "objet": "Vitesse par defaut",
+      "texte": "30 km/h sur tous les chemins publics.",
+      "statut": "divergent",
+      "recommandation": "harmoniser",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 15,
+        "max": null
+      },
+      "parametres": {
+        "limite_kmh": 30
+      },
+      "note": "DIVERGENT vs SMSL (50 par defaut). Choix 'ville apaisee'."
+    },
+    {
+      "id": "DM-54",
+      "source": "DM",
+      "numero": "54",
+      "theme": "vit_zone",
+      "objet": "Vitesse 50 km/h (annexe R)",
+      "texte": "50 km/h sur les chemins designes.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {
+        "limite_kmh": 50
+      },
+      "note": null
+    },
+    {
+      "id": "DM-55",
+      "source": "DM",
+      "numero": "55",
+      "theme": "vit_zone",
+      "objet": "Vitesse 70 km/h (annexe R)",
+      "texte": "70 km/h sur les chemins designes.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {
+        "limite_kmh": 70
+      },
+      "note": null
+    },
+    {
+      "id": "DM-56",
+      "source": "DM",
+      "numero": "56",
+      "theme": "veh_animaux",
+      "objet": "Voiture hippomobile / cheval",
+      "texte": "Doit etre monte ou mene a pied.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 75,
+        "max": 100
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-57",
+      "source": "DM",
+      "numero": "57",
+      "theme": "veh_animaux",
+      "objet": "Chevaux hors trottoirs/parcs",
+      "texte": "Interdiction de circuler sur trottoirs/parcs.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-58",
+      "source": "DM",
+      "numero": "58",
+      "theme": "veh_animaux",
+      "objet": "Equitation (annexe Q)",
+      "texte": "Interdite sur certains chemins.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-60",
+      "source": "DM",
+      "numero": "60",
+      "theme": "veh_loisirs",
+      "objet": "Motoneige / VTT - distance",
+      "texte": "Interdiction a moins de 350 m d'une habitation.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 200,
+        "max": 300
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-61",
+      "source": "DM",
+      "numero": "61",
+      "theme": "nui_peinture",
+      "objet": "Peinture fraiche",
+      "texte": "Interdiction de circuler sur lignes fraiches.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 75,
+        "max": 100
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-62",
+      "source": "DM",
+      "numero": "62",
+      "theme": "nui_marques",
+      "objet": "Marques sur pneus",
+      "texte": "Interdiction d'effacer les marques de controle.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-62.1",
+      "source": "DM",
+      "numero": "62.1",
+      "theme": "cir_vdfr",
+      "objet": "Virage a droite au feu rouge",
+      "texte": "Interdit aux intersections de l'annexe X.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": "r.9.1",
+      "amende": null,
+      "parametres": {},
+      "note": "Cadre par le reglement provincial; designation locale OK."
+    },
+    {
+      "id": "DM-62.2",
+      "source": "DM",
+      "numero": "62.2",
+      "theme": "cir_virage",
+      "objet": "Virage a gauche interdit",
+      "texte": "Aux endroits de l'annexe Y.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-63",
+      "source": "DM",
+      "numero": "63",
+      "theme": "usa_pietons",
+      "objet": "Passages pour pietons",
+      "texte": "Installation (annexe S).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-64",
+      "source": "DM",
+      "numero": "64",
+      "theme": "usa_pietons",
+      "objet": "Zones de securite pietons",
+      "texte": "Installation (annexe T).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-65",
+      "source": "DM",
+      "numero": "65",
+      "theme": "usa_velo",
+      "objet": "Voies cyclables",
+      "texte": "Etablit les voies cyclables (annexe U).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-66",
+      "source": "DM",
+      "numero": "66",
+      "theme": "usa_velo",
+      "objet": "Vehicules dans voie cyclable",
+      "texte": "Interdiction de circuler dans la voie cyclable.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 75,
+        "max": 100
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-69",
+      "source": "DM",
+      "numero": "69",
+      "theme": "adm_penalites",
+      "objet": "Infraction generale",
+      "texte": "Toute contravention constitue une infraction.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-70",
+      "source": "DM",
+      "numero": "70",
+      "theme": "adm_autorite",
+      "objet": "Pouvoir des agents / officiers",
+      "texte": "Autorise poursuites et constats.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-81",
+      "source": "DM",
+      "numero": "81",
+      "theme": "adm_penalites",
+      "objet": "Amende exces de vitesse",
+      "texte": "Bareme par tranche de 5 km/h.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": "516",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-84",
+      "source": "DM",
+      "numero": "84",
+      "theme": "adm_finales",
+      "objet": "Entree en vigueur",
+      "texte": "Selon la loi.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-1",
+      "source": "SM",
+      "numero": "1",
+      "theme": "adm_application",
+      "objet": "Definitions",
+      "texte": "Definitions; vise 'Regie d'assurance automobile', cyclomoteur/velomoteur.",
+      "statut": "desuet",
+      "recommandation": "reecrire",
+      "renvoi_csr": "4",
+      "amende": null,
+      "parametres": {},
+      "note": "DESUET: 'Regie d'Assurance Automobile du Quebec' = ancien nom (SAAQ); renvois L.R.Q. perimes; defs micromobilite absentes."
+    },
+    {
+      "id": "SM-2",
+      "source": "SM",
+      "numero": "2",
+      "theme": "adm_application",
+      "objet": "Sens du mot 'personne'",
+      "texte": "Inclut societe/compagnie/corporation.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-3",
+      "source": "SM",
+      "numero": "3",
+      "theme": "adm_application",
+      "objet": "Proprietaire d'un vehicule",
+      "texte": "Definition du proprietaire / presomption.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "592",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-4",
+      "source": "SM",
+      "numero": "4",
+      "theme": "veh_animaux",
+      "objet": "Voiture a traction animale",
+      "texte": "Doit respecter le reglement sur la chaussee.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-5",
+      "source": "SM",
+      "numero": "5",
+      "theme": "adm_autorite",
+      "objet": "Autorite du conseil",
+      "texte": "Nomme les personnes responsables (stationnement).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-6",
+      "source": "SM",
+      "numero": "6",
+      "theme": "adm_autorite",
+      "objet": "Responsabilite du service de police",
+      "texte": "Application par la police.",
+      "statut": "propre",
+      "recommandation": "reecrire",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": "Adapter au cadre de la Regie (RPLDM)."
+    },
+    {
+      "id": "SM-7",
+      "source": "SM",
+      "numero": "7",
+      "theme": "adm_autorite",
+      "objet": "Controle de la circulation",
+      "texte": "Pouvoir de diriger la circulation.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "565",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-8",
+      "source": "SM",
+      "numero": "8",
+      "theme": "adm_autorite",
+      "objet": "Enquete sur les accidents",
+      "texte": "Pouvoir d'enquete de la police.",
+      "statut": "a_valider",
+      "recommandation": "valider",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": "Ne releve pas d'un reglement de circulation."
+    },
+    {
+      "id": "SM-11",
+      "source": "SM",
+      "numero": "11",
+      "theme": "nui_divers",
+      "objet": "Boyau d'incendie",
+      "texte": "Interdiction de passer sur un boyau non protege.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": 300
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-12",
+      "source": "SM",
+      "numero": "12",
+      "theme": "sta_interdit",
+      "objet": "Canalisations d'incendie (siamois)",
+      "texte": "Interdiction de stationner sur voies d'acces.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-287",
+      "source": "SM",
+      "numero": "287",
+      "theme": "sig_pouvoir",
+      "objet": "Autorite du conseil (signalisation)",
+      "texte": "Installer enseignes, marques, dos d'ane.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-292",
+      "source": "SM",
+      "numero": "292",
+      "theme": "cir_acces_limite",
+      "objet": "Restriction de masse/dimension",
+      "texte": "Interdire selon masse ou dimension.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-294",
+      "source": "SM",
+      "numero": "294",
+      "theme": "cir_acces_limite",
+      "objet": "Restriction lors d'evenements",
+      "texte": "Restreindre la circulation temporairement.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-296",
+      "source": "SM",
+      "numero": "296",
+      "theme": "sig_pouvoir",
+      "objet": "Pouvoirs de signalisation",
+      "texte": "Zones d'arret, demi-tours, passages, voies cyclables...",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-302",
+      "source": "SM",
+      "numero": "302",
+      "theme": "sig_protection",
+      "objet": "Signalisation par la Ville seulement",
+      "texte": "Seule la Ville peut installer la signalisation.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 300,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-305",
+      "source": "SM",
+      "numero": "305",
+      "theme": "sig_protection",
+      "objet": "Signalisation non autorisee",
+      "texte": "Interdiction d'installer sans autorisation.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 100,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-311",
+      "source": "SM",
+      "numero": "311",
+      "theme": "sig_respect",
+      "objet": "Respect de la signalisation",
+      "texte": "Obligation de se conformer.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "310",
+      "amende": {
+        "min": 60,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-312",
+      "source": "SM",
+      "numero": "312",
+      "theme": "sig_respect",
+      "objet": "Obeir au signaleur / brigadier",
+      "texte": "Obeir malgre signalisation contraire.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "311",
+      "amende": {
+        "min": 60,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-314",
+      "source": "SM",
+      "numero": "314",
+      "theme": "cir_sens_unique",
+      "objet": "Sens uniques (annexe L)",
+      "texte": "Designe les chemins a sens unique.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-315",
+      "source": "SM",
+      "numero": "315",
+      "theme": "sig_protection",
+      "objet": "Degradation de la signalisation",
+      "texte": "Interdiction d'endommager/deplacer.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "315",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-321",
+      "source": "SM",
+      "numero": "321",
+      "theme": "cir_voies",
+      "objet": "Utilisation des voies (2 sens)",
+      "texte": "Utiliser la voie de droite.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "326",
+      "amende": {
+        "min": 60,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-322",
+      "source": "SM",
+      "numero": "322",
+      "theme": "cir_voies",
+      "objet": "Voie d'extreme droite",
+      "texte": "Sur chaussee a plusieurs voies.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "327",
+      "amende": {
+        "min": 60,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-325",
+      "source": "SM",
+      "numero": "325",
+      "theme": "cir_voies",
+      "objet": "Voies a sens unique",
+      "texte": "Voie d'extreme droite.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "329",
+      "amende": {
+        "min": 30,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-328",
+      "source": "SM",
+      "numero": "328",
+      "theme": "vit_defaut",
+      "objet": "Conduite imprudente / vitesse",
+      "texte": "Vitesse mettant en peril prohibee.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "327",
+      "amende": {
+        "min": 300,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-329",
+      "source": "SM",
+      "numero": "329",
+      "theme": "vit_defaut",
+      "objet": "Limites de vitesse",
+      "texte": "50 par defaut; 30 scolaire; 60 (annexe G); 15 domaine.",
+      "statut": "divergent",
+      "recommandation": "harmoniser",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {
+        "limite_kmh": 50
+      },
+      "note": "DIVERGENT vs DM (30 par defaut). SMSL: 50 (annexe F) + zones."
+    },
+    {
+      "id": "SM-330",
+      "source": "SM",
+      "numero": "330",
+      "theme": "vit_zone",
+      "objet": "Zone scolaire / hospitaliere",
+      "texte": "Designe zones scolaire (H) et hospitaliere (I).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {
+        "limite_kmh": 30
+      },
+      "note": null
+    },
+    {
+      "id": "SM-331",
+      "source": "SM",
+      "numero": "331",
+      "theme": "vit_conditions",
+      "objet": "Reduire la vitesse (visibilite)",
+      "texte": "Reduire selon obscurite/pluie/chaussee.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "330",
+      "amende": {
+        "min": 60,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-332",
+      "source": "SM",
+      "numero": "332",
+      "theme": "vit_conditions",
+      "objet": "Lenteur excessive",
+      "texte": "Interdiction de gener la circulation.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "331",
+      "amende": {
+        "min": 100,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-333",
+      "source": "SM",
+      "numero": "333",
+      "theme": "vit_radar",
+      "objet": "Mesure de la vitesse (appareil)",
+      "texte": "Appareil approuve par la Regie fait preuve.",
+      "statut": "propre",
+      "recommandation": "reecrire",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": "Adapter au cadre RPLDM."
+    },
+    {
+      "id": "SM-334",
+      "source": "SM",
+      "numero": "334",
+      "theme": "vit_radar",
+      "objet": "Detecteur de radar",
+      "texte": "Interdiction; renvoie au CSR art. 253.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "253",
+      "amende": {
+        "min": 200,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-336",
+      "source": "SM",
+      "numero": "336",
+      "theme": "cir_distance",
+      "objet": "Distance entre vehicules",
+      "texte": "Distance prudente et raisonnable.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "335",
+      "amende": {
+        "min": 30,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-381",
+      "source": "SM",
+      "numero": "381",
+      "theme": "nui_divers",
+      "objet": "Enfant <7 ans sans surveillance",
+      "texte": "Interdiction de laisser l'enfant seul.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "381",
+      "amende": {
+        "min": 60,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-382",
+      "source": "SM",
+      "numero": "382",
+      "theme": "sta_position",
+      "objet": "Cle / portieres",
+      "texte": "Enlever la cle et verrouiller.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "382",
+      "amende": {
+        "min": 30,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-383",
+      "source": "SM",
+      "numero": "383",
+      "theme": "sta_interdit",
+      "objet": "Immobilisation genante",
+      "texte": "Ne pas gener circulation/signalisation.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "383",
+      "amende": {
+        "min": 30,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-383.2",
+      "source": "SM",
+      "numero": "383.2",
+      "theme": "sta_nuit_hiver",
+      "objet": "Stationnement de nuit (hiver)",
+      "texte": "Interdit minuit-7h, 15 nov au 15 avr.",
+      "statut": "divergent",
+      "recommandation": "harmoniser",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {
+        "heures": "00:00-07:00",
+        "periode": "15-11 au 15-04"
+      },
+      "note": "DIVERGENT vs DM: periode plus courte (debute 15 nov, non 1er nov)."
+    },
+    {
+      "id": "SM-383.3",
+      "source": "SM",
+      "numero": "383.3",
+      "theme": "sta_transport",
+      "objet": "Taxis en attente",
+      "texte": "Interdit sauf endroits prevus (annexe D).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-383.6",
+      "source": "SM",
+      "numero": "383.6",
+      "theme": "sta_interdit",
+      "objet": "Stationnement dans les ruelles",
+      "texte": "Interdit sauf chargement.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-384",
+      "source": "SM",
+      "numero": "384",
+      "theme": "sta_position",
+      "objet": "Positionnement (30 cm, sens)",
+      "texte": "A >30 cm de la bordure, dans le sens.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "383",
+      "amende": {
+        "min": 30,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-387",
+      "source": "SM",
+      "numero": "387",
+      "theme": "sta_interdit",
+      "objet": "Endroits d'immobilisation interdits",
+      "texte": "Liste (trottoir, borne, intersection...).",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "386",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-389",
+      "source": "SM",
+      "numero": "389",
+      "theme": "sta_handicape",
+      "objet": "Reserve personnes handicapees",
+      "texte": "Vignette requise.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "388",
+      "amende": {
+        "min": 30,
+        "max": null
+      },
+      "parametres": {},
+      "note": "Renvoi 'art. 11 (L.127)' perime."
+    },
+    {
+      "id": "SM-390",
+      "source": "SM",
+      "numero": "390",
+      "theme": "veh_charge",
+      "objet": "Heures de conduite autobus",
+      "texte": "Limite de temps de conduite.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "519",
+      "amende": {
+        "min": 200,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-392",
+      "source": "SM",
+      "numero": "392",
+      "theme": "sta_remorquage",
+      "objet": "Abandon de vehicule",
+      "texte": "Interdiction d'abandonner sur chemin public.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 100,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.1",
+      "source": "SM",
+      "numero": "396.1",
+      "theme": "sta_remorquage",
+      "objet": "Deneigement / travaux",
+      "texte": "Interdiction lors de travaux/neige.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.4",
+      "source": "SM",
+      "numero": "396.4",
+      "theme": "nui_lavage",
+      "objet": "Reparation sur la voie publique",
+      "texte": "Interdiction de stationner pour reparer.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.6",
+      "source": "SM",
+      "numero": "396.6",
+      "theme": "nui_lavage",
+      "objet": "Reparer sur le chemin public",
+      "texte": "Interdiction.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.7",
+      "source": "SM",
+      "numero": "396.7",
+      "theme": "nui_lavage",
+      "objet": "Laver sur le chemin public",
+      "texte": "Interdiction.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.8",
+      "source": "SM",
+      "numero": "396.8",
+      "theme": "nui_lavage",
+      "objet": "Vente / affichage depuis vehicule",
+      "texte": "Interdiction.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.9",
+      "source": "SM",
+      "numero": "396.9",
+      "theme": "veh_charge",
+      "objet": "Chargement / dechargement",
+      "texte": "Parallele a la chaussee, sans interruption.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.11",
+      "source": "SM",
+      "numero": "396.11",
+      "theme": "sta_debarcadere",
+      "objet": "Zones de chargement/voyageurs",
+      "texte": "Duree limitee (max 30 min dechargement).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.13",
+      "source": "SM",
+      "numero": "396.13",
+      "theme": "sta_lourds",
+      "objet": "Vehicules non-promenade en residentiel",
+      "texte": "Interdiction sur chemin public.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.14",
+      "source": "SM",
+      "numero": "396.14",
+      "theme": "sta_interdit",
+      "objet": "Zone d'urgence (annexe J)",
+      "texte": "Interdiction de stationner (exceptions).",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": {
+        "min": 25,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-396.15",
+      "source": "SM",
+      "numero": "396.15",
+      "theme": "sta_lots",
+      "objet": "Descente de bateaux (vignette)",
+      "texte": "Residents gratuit; non-residents 400$/saison.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {
+        "tarif_non_resident": "400$"
+      },
+      "note": "Comparer aux conditions de la vignette DM (art. 48)."
+    },
+    {
+      "id": "SM-396",
+      "source": "SM",
+      "numero": "396",
+      "theme": "nui_ceinture",
+      "objet": "Ceinture - vehicule non conforme",
+      "texte": "Ceinture manquante/modifiee interdite.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "250",
+      "amende": {
+        "min": 200,
+        "max": null
+      },
+      "parametres": {},
+      "note": "REDONDANT: section entiere reprise du CSR. Absente chez DM."
+    },
+    {
+      "id": "SM-397",
+      "source": "SM",
+      "numero": "397",
+      "theme": "nui_ceinture",
+      "objet": "Port de la ceinture (5 ans +)",
+      "texte": "Obligation de porter la ceinture.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "396",
+      "amende": {
+        "min": 45,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-398",
+      "source": "SM",
+      "numero": "398",
+      "theme": "nui_ceinture",
+      "objet": "Dispositif de retenue (-5 ans)",
+      "texte": "Siege d'enfant obligatoire.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "397",
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-402",
+      "source": "SM",
+      "numero": "402",
+      "theme": "nui_ceinture",
+      "objet": "Passager <16 ans",
+      "texte": "Responsabilite du conducteur.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "397",
+      "amende": {
+        "min": 45,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-403",
+      "source": "SM",
+      "numero": "403",
+      "theme": "cir_priorite",
+      "objet": "Priorite a droite",
+      "texte": "Ceder a droite a l'intersection.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "341",
+      "amende": {
+        "min": 60,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-404",
+      "source": "SM",
+      "numero": "404",
+      "theme": "cir_priorite",
+      "objet": "Chemin a acces limite",
+      "texte": "Ceder en s'engageant.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "406",
+      "amende": {
+        "min": 60,
+        "max": null
+      },
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "SM-PIE",
+      "source": "SM",
+      "numero": "PIE",
+      "theme": "usa_pietons",
+      "objet": "Dispositions pietons",
+      "texte": "Regles applicables aux pietons.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "444",
+      "amende": null,
+      "parametres": {},
+      "note": "Chapitre III - largement repris du CSR."
+    },
+    {
+      "id": "SM-ECO",
+      "source": "SM",
+      "numero": "ECO",
+      "theme": "veh_ecoliers",
+      "objet": "Transport d'ecoliers",
+      "texte": "Regles autobus scolaires.",
+      "statut": "redondant_csr",
+      "recommandation": "retirer",
+      "renvoi_csr": "460",
+      "amende": null,
+      "parametres": {},
+      "note": "Section I, chapitre IV."
+    },
+    {
+      "id": "SM-MOT",
+      "source": "SM",
+      "numero": "MOT",
+      "theme": "usa_moto",
+      "objet": "Motos / cyclomoteurs / bicyclettes",
+      "texte": "Dispositions particulieres.",
+      "statut": "redondant_csr",
+      "recommandation": "reecrire",
+      "renvoi_csr": "479",
+      "amende": null,
+      "parametres": {},
+      "note": "Section III, chapitre IV."
+    },
+    {
+      "id": "SM-ANI",
+      "source": "SM",
+      "numero": "ANI",
+      "theme": "veh_animaux",
+      "objet": "Animaux",
+      "texte": "Dispositions concernant les animaux.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": "Chapitre V."
+    },
+    {
+      "id": "SM-DIV",
+      "source": "SM",
+      "numero": "DIV",
+      "theme": "nui_divers",
+      "objet": "Usages divers des chemins",
+      "texte": "Dispositions diverses.",
+      "statut": "a_valider",
+      "recommandation": "valider",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": "Chapitre VI - a trier (nuisances vs circulation)."
+    },
+    {
+      "id": "SM-601",
+      "source": "SM",
+      "numero": "601",
+      "theme": "adm_penalites",
+      "objet": "Infractions et peines",
+      "texte": "Bareme general (25$-300$) + tableaux par article.",
+      "statut": "propre",
+      "recommandation": "reecrire",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": "Titre IV - moderniser; envisager les SAP municipales (2024, c.10)."
+    },
+    {
+      "id": "SM-FIN",
+      "source": "SM",
+      "numero": "FIN",
+      "theme": "adm_finales",
+      "objet": "Dispositions finales",
+      "texte": "Entree en vigueur.",
+      "statut": "propre",
+      "recommandation": "conserver",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": null
+    },
+    {
+      "id": "DM-LAC-micromob",
+      "source": "DM",
+      "numero": "LAC-micromob",
+      "theme": "usa_micromob",
+      "objet": "AMM / trottinettes electriques",
+      "texte": "Pas de regime explicite (trottinettes assimilees au velo, art. 6).",
+      "statut": "a_valider",
+      "recommandation": "moderniser",
+      "renvoi_csr": null,
+      "amende": null,
+      "parametres": {},
+      "note": "Cadre par arretes/projets pilotes provinciaux; a couvrir explicitement."
+    }
+  ]
+}</script>
+<script>
+const STATUTS = {
+  propre:        {label:"Propre",        reco:"conserver"},
+  redondant_csr: {label:"Redondant CSR", reco:"retirer"},
+  divergent:     {label:"Divergent",     reco:"harmoniser"},
+  desuet:        {label:"Désuet",        reco:"réécrire"},
+  hybride:       {label:"Hybride",       reco:"réécrire/scinder"},
+  a_valider:     {label:"À valider",     reco:"valider"},
+};
+const FLAGS = {
+  harmonise:     "Harmonisé",
+  divergent:     "Divergent",
+  lacune:        "Lacune",
+  redondant_csr: "Redondant CSR",
+  partiel:       "Partiellement redondant",
+};
+const VILLE = {DM:"Deux-Montagnes #1125", SM:"Sainte-Marthe #822"};
+
+let TAX, ART, state = {view:"rapport", domaine:"all", statut:"all", q:""};
+
+async function load(){
+  try{
+    const [t,a] = await Promise.all([
+      fetch("./taxonomie.json").then(r=>{if(!r.ok)throw 0;return r.json()}),
+      fetch("./articles.json").then(r=>{if(!r.ok)throw 0;return r.json()}),
+    ]);
+    TAX=t; ART=a.articles||a;
+  }catch(e){
+    TAX=JSON.parse(document.getElementById("emb-tax").textContent);
+    ART=JSON.parse(document.getElementById("emb-art").textContent);
+    ART=ART.articles||ART;
+  }
+  initFilters(); render();
+}
+
+function esc(s){return (s==null?"":""+s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function themeLabel(id){const t=TAX.themes.find(x=>x.id===id);return t?t.label:id}
+function domLabel(id){const d=TAX.domaines.find(x=>x.id===id);return d?d.label:id}
+function themeDomaine(id){const t=TAX.themes.find(x=>x.id===id);return t?t.domaine:"adm"}
+function badge(st){return `<span class="badge s-${st}">${esc(STATUTS[st]?STATUTS[st].label:st)}</span>`}
+function amende(a){if(!a)return"";const mn=a.min!=null?a.min+"$":"";const mx=a.max!=null?"–"+a.max+"$":(a.min!=null?"+":"");return mn?`<span class="pill">amende ${mn}${mx}</span>`:""}
+
+function themeFlag(fiches){
+  const dm=fiches.filter(f=>f.source==="DM"), sm=fiches.filter(f=>f.source==="SM");
+  if((dm.length===0)!==(sm.length===0)) return "lacune";
+  if(fiches.some(f=>f.statut==="divergent")) return "divergent";
+  const allRedon = fiches.every(f=>f.statut==="redondant_csr");
+  if(allRedon) return "redondant_csr";
+  if(fiches.some(f=>f.statut==="redondant_csr")) return "partiel";
+  return "harmonise";
+}
+
+function initFilters(){
+  const sel=document.getElementById("fdomaine");
+  sel.innerHTML = `<option value="all">Tous les domaines</option>` +
+    TAX.domaines.map(d=>`<option value="${d.id}">${esc(d.label)}</option>`).join("");
+  const chips=document.getElementById("fstatut");
+  const order=["all","divergent","redondant_csr","propre","desuet","hybride","a_valider"];
+  chips.innerHTML = order.map(s=>{
+    const lbl = s==="all"?"Tous les statuts":(STATUTS[s]?STATUTS[s].label:s);
+    return `<button class="chip" data-statut="${s}" aria-pressed="${s==="all"}">${esc(lbl)}</button>`;
+  }).join("");
+  chips.addEventListener("click",e=>{
+    const b=e.target.closest(".chip"); if(!b)return;
+    state.statut=b.dataset.statut;
+    [...chips.children].forEach(c=>c.setAttribute("aria-pressed", c.dataset.statut===state.statut));
+    render();
+  });
+  sel.addEventListener("change",()=>{state.domaine=sel.value;render()});
+  document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value.toLowerCase().trim();render()});
+  document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>setView(t.id.replace("tab-",""))));
+}
+
+function setView(v){
+  state.view=v;
+  document.getElementById("tab-rapport").setAttribute("aria-selected", v==="rapport");
+  document.getElementById("tab-table").setAttribute("aria-selected", v==="table");
+  document.getElementById("view-rapport").hidden = v!=="rapport";
+  document.getElementById("view-table").hidden = v!=="table";
+}
+
+function match(f){
+  if(state.domaine!=="all" && themeDomaine(f.theme)!==state.domaine) return false;
+  if(state.statut!=="all" && f.statut!==state.statut) return false;
+  if(state.q){
+    const hay=(f.numero+" "+f.objet+" "+f.texte+" "+themeLabel(f.theme)+" "+(f.note||"")+" "+(f.renvoi_csr||"")).toLowerCase();
+    if(!hay.includes(state.q)) return false;
+  }
+  return true;
+}
+
+function renderSummary(){
+  const a=ART;
+  const n=a.length;
+  const redo=a.filter(x=>x.statut==="redondant_csr").length;
+  const divg=new Set(a.filter(x=>x.statut==="divergent").map(x=>x.theme)).size;
+  // lacunes : themes presents dans une seule ville
+  const by={};a.forEach(x=>{(by[x.theme]=by[x.theme]||{DM:0,SM:0})[x.source]++});
+  const lac=Object.values(by).filter(v=>(v.DM===0)!==(v.SM===0)).length;
+  document.getElementById("summary").innerHTML = `
+    <div class="stat"><div class="n">${n}</div><div class="l">articles indexés (DM + SMSL)</div></div>
+    <div class="stat redo"><div class="n">${redo}</div><div class="l">redondants avec le CSR — à élaguer</div></div>
+    <div class="stat divg"><div class="n">${divg}</div><div class="l">thèmes divergents — à harmoniser</div></div>
+    <div class="stat lacu"><div class="n">${lac}</div><div class="l">thèmes en lacune (une seule ville)</div></div>`;
+}
+
+function ficheHTML(f){
+  return `<div class="fiche">
+    <div class="fhead"><span class="art">art. ${esc(f.numero)}</span><span class="obj">${esc(f.objet)}</span></div>
+    <div class="txt">${esc(f.texte)}</div>
+    <div class="meta">${badge(f.statut)}<span class="pill">→ ${esc(STATUTS[f.statut]?STATUTS[f.statut].reco:f.recommandation)}</span>${f.renvoi_csr?`<span class="pill">CSR ${esc(f.renvoi_csr)}</span>`:""}${amende(f.amende)}</div>
+    ${f.note?`<div class="note">${esc(f.note)}</div>`:""}
+  </div>`;
+}
+
+function renderRapport(){
+  const root=document.getElementById("view-rapport");
+  const visible=ART.filter(match);
+  // group by domaine -> theme (only themes that have any visible fiche)
+  const themesWith={};
+  visible.forEach(f=>{(themesWith[f.theme]=themesWith[f.theme]||[]).push(f)});
+  let html="";
+  for(const dom of TAX.domaines){
+    const themes=TAX.themes.filter(t=>t.domaine===dom.id && themesWith[t.id]);
+    if(!themes.length) continue;
+    html+=`<div class="domaine">${esc(dom.label)}</div>`;
+    for(const t of themes){
+      const all=ART.filter(f=>f.theme===t.id);        // flag computed on full set
+      const flag=themeFlag(all);
+      const fs=themesWith[t.id];
+      const dm=fs.filter(f=>f.source==="DM"), sm=fs.filter(f=>f.source==="SM");
+      const openByDefault = (flag==="divergent");
+      html+=`<details class="theme" ${openByDefault?"open":""}>
+        <summary>
+          <span class="caret">▶</span>
+          <span class="tname">${esc(t.label)}</span>
+          <span class="badge f-${flag}">${esc(FLAGS[flag])}</span>
+        </summary>
+        <div class="cols">
+          <div class="col"><h4><span class="pill sm">SMSL #822</span></h4>${sm.length?sm.map(ficheHTML).join(""):'<div class="empty">Aucune disposition correspondante</div>'}</div>
+          <div class="col"><h4><span class="pill dm">DM #1125</span></h4>${dm.length?dm.map(ficheHTML).join(""):'<div class="empty">Aucune disposition correspondante</div>'}</div>
+        </div>
+      </details>`;
+    }
+  }
+  root.innerHTML = html || `<p class="empty">Aucun article ne correspond aux filtres.</p>`;
+}
+
+function renderTable(){
+  const rows=ART.filter(match).sort((a,b)=>themeLabel(a.theme).localeCompare(themeLabel(b.theme)));
+  document.getElementById("tcount").textContent = `${rows.length} article(s)`;
+  document.getElementById("trows").innerHTML = rows.map(f=>`
+    <tr>
+      <td><span class="pill ${f.source==='DM'?'dm':'sm'}">${f.source}</span></td>
+      <td>${esc(f.numero)}</td>
+      <td><div class="objt">${esc(f.objet)}</div><div class="txtt">${esc(f.texte)}</div>${f.note?`<div class="txtt" style="color:#8a5a14">⚑ ${esc(f.note)}</div>`:""}</td>
+      <td class="hide-sm">${esc(themeLabel(f.theme))}</td>
+      <td>${badge(f.statut)}</td>
+      <td>${esc(STATUTS[f.statut]?STATUTS[f.statut].reco:f.recommandation)}</td>
+      <td class="hide-sm">${f.renvoi_csr?esc(f.renvoi_csr):"—"}</td>
+    </tr>`).join("");
+}
+
+function render(){ renderSummary(); renderRapport(); renderTable(); }
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+{
+  "domaines": [
+    {
+      "id": "sig",
+      "label": "Signalisation"
+    },
+    {
+      "id": "cir",
+      "label": "Circulation (mouvement)"
+    },
+    {
+      "id": "vit",
+      "label": "Vitesse"
+    },
+    {
+      "id": "sta",
+      "label": "Stationnement / immobilisation"
+    },
+    {
+      "id": "usa",
+      "label": "Usagers vulnerables & micromobilite"
+    },
+    {
+      "id": "veh",
+      "label": "Vehicules particuliers"
+    },
+    {
+      "id": "nui",
+      "label": "Nuisances liees a la circulation"
+    },
+    {
+      "id": "adm",
+      "label": "Administration & penalites"
+    }
+  ],
+  "themes": [
+    {
+      "id": "sig_arret",
+      "domaine": "sig",
+      "label": "Panneaux d'arret"
+    },
+    {
+      "id": "sig_ceder",
+      "domaine": "sig",
+      "label": "Ceder le passage"
+    },
+    {
+      "id": "sig_feux",
+      "domaine": "sig",
+      "label": "Feux de circulation"
+    },
+    {
+      "id": "sig_lumineux",
+      "domaine": "sig",
+      "label": "Signaux lumineux / voies"
+    },
+    {
+      "id": "sig_pouvoir",
+      "domaine": "sig",
+      "label": "Pouvoir d'installer la signalisation"
+    },
+    {
+      "id": "sig_respect",
+      "domaine": "sig",
+      "label": "Respect de la signalisation / signaleur"
+    },
+    {
+      "id": "sig_protection",
+      "domaine": "sig",
+      "label": "Signalisation non autorisee / degradation"
+    },
+    {
+      "id": "cir_voies",
+      "domaine": "cir",
+      "label": "Utilisation des voies / lignes"
+    },
+    {
+      "id": "cir_priorite",
+      "domaine": "cir",
+      "label": "Priorite de passage / intersections"
+    },
+    {
+      "id": "cir_depassement",
+      "domaine": "cir",
+      "label": "Depassement"
+    },
+    {
+      "id": "cir_virage",
+      "domaine": "cir",
+      "label": "Virages & demi-tours"
+    },
+    {
+      "id": "cir_vdfr",
+      "domaine": "cir",
+      "label": "Virage a droite au feu rouge"
+    },
+    {
+      "id": "cir_sens_unique",
+      "domaine": "cir",
+      "label": "Sens unique"
+    },
+    {
+      "id": "cir_manoeuvre",
+      "domaine": "cir",
+      "label": "Signalement des manoeuvres"
+    },
+    {
+      "id": "cir_distance",
+      "domaine": "cir",
+      "label": "Distance entre vehicules"
+    },
+    {
+      "id": "cir_acces_limite",
+      "domaine": "cir",
+      "label": "Chemins a acces limite / tonnage"
+    },
+    {
+      "id": "vit_defaut",
+      "domaine": "vit",
+      "label": "Limite de vitesse par defaut"
+    },
+    {
+      "id": "vit_zone",
+      "domaine": "vit",
+      "label": "Zones de vitesse designees (scolaire, etc.)"
+    },
+    {
+      "id": "vit_conditions",
+      "domaine": "vit",
+      "label": "Reduction selon conditions / lenteur"
+    },
+    {
+      "id": "vit_radar",
+      "domaine": "vit",
+      "label": "Detecteur de radar / mesure de vitesse"
+    },
+    {
+      "id": "sta_interdit",
+      "domaine": "sta",
+      "label": "Interdictions / endroits prohibes"
+    },
+    {
+      "id": "sta_nuit_hiver",
+      "domaine": "sta",
+      "label": "Stationnement de nuit / hiver"
+    },
+    {
+      "id": "sta_duree",
+      "domaine": "sta",
+      "label": "Duree limitee / vignettes residents"
+    },
+    {
+      "id": "sta_paiement",
+      "domaine": "sta",
+      "label": "Parcometres / tarifs / lots payants"
+    },
+    {
+      "id": "sta_handicape",
+      "domaine": "sta",
+      "label": "Reserve aux personnes handicapees"
+    },
+    {
+      "id": "sta_debarcadere",
+      "domaine": "sta",
+      "label": "Debarcaderes / zones de livraison"
+    },
+    {
+      "id": "sta_transport",
+      "domaine": "sta",
+      "label": "Taxis / transport collectif"
+    },
+    {
+      "id": "sta_lots",
+      "domaine": "sta",
+      "label": "Stationnements municipaux / descente de bateaux"
+    },
+    {
+      "id": "sta_lourds",
+      "domaine": "sta",
+      "label": "Vehicules lourds / recreatifs (nuit, residentiel)"
+    },
+    {
+      "id": "sta_remorquage",
+      "domaine": "sta",
+      "label": "Remorquage / deneigement / abandon"
+    },
+    {
+      "id": "sta_position",
+      "domaine": "sta",
+      "label": "Regles de positionnement du vehicule"
+    },
+    {
+      "id": "usa_pietons",
+      "domaine": "usa",
+      "label": "Pietons / passages"
+    },
+    {
+      "id": "usa_velo",
+      "domaine": "usa",
+      "label": "Bicyclettes / voies cyclables"
+    },
+    {
+      "id": "usa_micromob",
+      "domaine": "usa",
+      "label": "AMM / trottinettes electriques"
+    },
+    {
+      "id": "usa_moto",
+      "domaine": "usa",
+      "label": "Motos / cyclomoteurs"
+    },
+    {
+      "id": "veh_ecoliers",
+      "domaine": "veh",
+      "label": "Transport d'ecoliers"
+    },
+    {
+      "id": "veh_charge",
+      "domaine": "veh",
+      "label": "Vehicules lourds / charge / livraison"
+    },
+    {
+      "id": "veh_loisirs",
+      "domaine": "veh",
+      "label": "Vehicules de loisirs (VHR, motoneige)"
+    },
+    {
+      "id": "veh_animaux",
+      "domaine": "veh",
+      "label": "Hippomobiles / chevaux / animaux"
+    },
+    {
+      "id": "nui_lavage",
+      "domaine": "nui",
+      "label": "Lavage / reparation / vente sur rue"
+    },
+    {
+      "id": "nui_peinture",
+      "domaine": "nui",
+      "label": "Circulation sur peinture fraiche"
+    },
+    {
+      "id": "nui_marques",
+      "domaine": "nui",
+      "label": "Effacement de marques (controle stationnement)"
+    },
+    {
+      "id": "nui_ceinture",
+      "domaine": "nui",
+      "label": "Ceinture de securite"
+    },
+    {
+      "id": "nui_divers",
+      "domaine": "nui",
+      "label": "Autres usages des chemins publics"
+    },
+    {
+      "id": "adm_application",
+      "domaine": "adm",
+      "label": "Champ d'application / definitions"
+    },
+    {
+      "id": "adm_autorite",
+      "domaine": "adm",
+      "label": "Autorite / agents / application"
+    },
+    {
+      "id": "adm_penalites",
+      "domaine": "adm",
+      "label": "Infractions et peines"
+    },
+    {
+      "id": "adm_finales",
+      "domaine": "adm",
+      "label": "Dispositions finales"
+    }
+  ]
+}
