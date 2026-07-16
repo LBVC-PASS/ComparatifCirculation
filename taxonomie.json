@@ -11,6 +11,18 @@
       "label": "Deux-Montagnes",
       "reglement": "1125",
       "court": "DM #1125"
+    },
+    {
+      "id": "SJ",
+      "label": "Saint-Joseph-du-Lac",
+      "reglement": "10-2018",
+      "court": "SJ 10-2018"
+    },
+    {
+      "id": "PC",
+      "label": "Pointe-Calumet",
+      "reglement": "380-97",
+      "court": "PC 380-97"
     }
   ],
   "domaines": [
